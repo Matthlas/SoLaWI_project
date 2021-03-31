@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 7103092773358225443}
+  _plantPrefab: {fileID: 0}
 --- !u!1 &2389304770182394255
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 6199664828107922316}
+  _plantPrefab: {fileID: 3638427549206609116, guid: 8664426138227486da5dc2247092f4a4, type: 3}
 --- !u!1 &2908824743024920079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 6002063414941189594}
+  _plantPrefab: {fileID: 0}
 --- !u!1 &4340370090531551641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 8041889011376580506}
+  _plantPrefab: {fileID: 0}
 --- !u!1 &5010721622764034450
 GameObject:
   m_ObjectHideFlags: 0
@@ -11125,6 +11129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 3884946423012362317}
+  _plantPrefab: {fileID: 0}
 --- !u!1 &6097381070798084515
 GameObject:
   m_ObjectHideFlags: 0
@@ -11310,6 +11315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 1354154063022855746}
+  _plantPrefab: {fileID: 0}
 --- !u!1 &6620653851164362122
 GameObject:
   m_ObjectHideFlags: 0
@@ -11517,6 +11523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 2697668951764971028}
+  _plantPrefab: {fileID: 0}
 --- !u!1 &7048931612495504739
 GameObject:
   m_ObjectHideFlags: 0
@@ -11601,7 +11608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4280149623081043143}
   m_Layer: 0
-  m_Name: Interactable_bed
+  m_Name: Interactable_longbed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16538,6 +16545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 8152168194327801091}
+  _plantPrefab: {fileID: 0}
 --- !u!1 &7454773932461026099
 GameObject:
   m_ObjectHideFlags: 0
