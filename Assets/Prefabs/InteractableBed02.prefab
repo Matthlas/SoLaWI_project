@@ -86,8 +86,9 @@ GameObject:
   - component: {fileID: 2721879279589685354}
   - component: {fileID: 2721879279589685355}
   - component: {fileID: 2721879279589685352}
+  - component: {fileID: -618832839307074804}
   m_Layer: 0
-  m_Name: InteractableBed
+  m_Name: InteractableBed02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,6 +171,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-618832839307074804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721879279589685353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb8f0585bef54ce8a271fe639356631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: {fileID: 3638427549206609116, guid: 8664426138227486da5dc2247092f4a4, type: 3}
 --- !u!1 &2721879280292176347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5085,4 +5099,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionCue: {fileID: 2721879280292176346}
-  _plantPrefab: {fileID: 3638427549206609116, guid: 8664426138227486da5dc2247092f4a4, type: 3}

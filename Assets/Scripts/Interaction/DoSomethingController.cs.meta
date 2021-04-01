@@ -3,7 +3,9 @@ guid: 765d23b6716f93442a1645c98b5509fe
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - InteractionCue: {instanceID: 0}
+  - _plantPrefab: {fileID: 3638427549206609116, guid: 8664426138227486da5dc2247092f4a4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

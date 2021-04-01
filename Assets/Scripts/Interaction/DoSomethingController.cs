@@ -9,31 +9,75 @@ public class DoSomethingController : MonoBehaviour
     [SerializeField] 
     private ParticleSystem InteractionCue = null;
     
-    [SerializeField]
-    private GameObject _plantPrefab;
+    //[SerializeField]
+    //private GameObject _plantPrefab;
     
-    //action for testing
+    //var instance : GameObject = Instantiate(Prefabs.Load("Plant"));
+    
+    //finite state machine for bed
+    private enum BedFSM
+    {
+        plain,
+        planted,
+        growth
+        
+    }
+    // default state
+    BedFSM bedMode = BedFSM.plain;
+    
+    
+    
+    ////action for testing
     public void Action()
     {
         Debug.Log("ACTION");
 
-        InteractionCue.Play();
-        // Harvest
-        // Water...
+        
+        
+        //perform an action depending on the mode
+        if (bedMode == BedFSM.plain)
+        {
+            InteractionCue.Play();
+            Planting();
+            bedMode = BedFSM.planted;
+
+        }
+        
+        else if (bedMode == BedFSM.planted)
+        {
+            InteractionCue.Play();
+            Watering();
+            bedMode = BedFSM.growth;
+
+        }
+        
+        else if (bedMode == BedFSM.growth)
+        {
+            InteractionCue.Play();
+            Harvesting();
+            bedMode = BedFSM.plain;
+
+        }
     }
     
-    //use "p" for planting
-    public void Plant()
+ 
+    public void Planting()
     {
         Debug.Log("Planting");
-        //bed spawns a new plant on top
-        Instantiate(_plantPrefab, transform.position + new Vector3(0,-0.3f,0),  Quaternion.identity, this.transform);
+        GameObject plant = (GameObject)Instantiate(Resources.Load("Plant")); 
+        Instantiate(plant, transform.position + new Vector3(0, -0.3f, 0), Quaternion.identity, this.transform);
 
-        InteractionCue.Play();
-        
+
+    }
+
+    public void Watering()
+    {
+        Debug.Log("Watering");
     }
     
-    //watering
-    
-    //planting
+    public void Harvesting()
+    {
+        Debug.Log("Harvesting");
+    }
+ 
 }
