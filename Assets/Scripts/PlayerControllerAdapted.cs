@@ -17,9 +17,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     private Vector3 _moveDirection = Vector3.zero;
 
-    private InventoryItemBase mCurrentItem = null;
-    
-    public bool IsDead = true;
+    private InteractableItemBaseClass mCurrentItem = null;
 
     // private HealthBar mHealthBar;
 
@@ -43,11 +41,11 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     public GameObject Hand;
 
-    public HUD Hud;
+    public HUD_ours Hud;
 
     public float JumpSpeed = 7.0f;
 
-    public event EventHandler PlayerDied;
+    // public event EventHandler PlayerDied;
 
     public Transform cam;
 
@@ -226,10 +224,10 @@ public class PlayerControllerAdapted : MonoBehaviour
     //     return (mCurrentItem.Name == itemName);
     // }
 
-    public InventoryItemBase GetCurrentItem()
-    {
-        return mCurrentItem;
-    }
+    // public InventoryItemBase GetCurrentItem()
+    // {
+    //     return mCurrentItem;
+    // }
 
     // public bool IsArmed
     // {
@@ -314,16 +312,7 @@ public class PlayerControllerAdapted : MonoBehaviour
     // {
     //     mIsControlEnabled = false;
     // }
-
-    private Vector3 mExternalMovement = Vector3.zero;
-
-    public Vector3 ExternalMovement
-    {
-        set
-        {
-            mExternalMovement = value;
-        }
-    }
+    
 
     // void FixedUpdate()
     // {
@@ -336,60 +325,42 @@ public class PlayerControllerAdapted : MonoBehaviour
     //         }
     //     }
     // }
-
-    void LateUpdate()
-    {
-        if (mExternalMovement != Vector3.zero)
-        {
-            _characterController.Move(mExternalMovement);
-        }
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        if (!IsDead)
-        {
-            // Interact with the item
-            if (mInteractItem != null && Input.GetKeyDown(KeyCode.F))
-            {
-                // Interact animation
-                mInteractItem.OnInteractAnimation(_animator);
-            }
 
-            // Execute action with item
-            // if (mCurrentItem != null && Input.GetMouseButtonDown(0))
-            // {
-            //     // Dont execute click if mouse pointer is over uGUI element
-            //     if (!EventSystem.current.IsPointerOverGameObject())
-            //     {
-            //         // TODO: Logic which action to execute has to come from the particular item
-            //         _animator.SetTrigger("attack_1");
-            //     }
-            // }
-            movePlayer();
-        }
+        
+        InteractWithItem();
+
+        movePlayer();
     }
 
     public void InteractWithItem()
     {
-        if (mInteractItem != null)
+        
+        if (mInteractItem != null && Input.GetMouseButtonDown(0))
         {
+            Debug.Log("True");
+            // Interact animation 
+            mInteractItem.OnInteractAnimation(_animator);
+            // Interaction function of the object
             mInteractItem.OnInteract();
 
-            if (mInteractItem is InventoryItemBase)
-            {
-                InventoryItemBase inventoryItem = mInteractItem as InventoryItemBase;
-                Inventory.AddItem(inventoryItem);
-                inventoryItem.OnPickup();
-
-                if (inventoryItem.UseItemAfterPickup)
-                {
-                    Inventory.UseItem(inventoryItem);
-                }
-                Hud.CloseMessagePanel();
-                mInteractItem = null;
-            }
+            // if (mInteractItem is InventoryItemBase)
+            // {
+            //     InventoryItemBase inventoryItem = mInteractItem as InventoryItemBase;
+            //     Inventory.AddItem(inventoryItem);
+            //     inventoryItem.OnPickup();
+            //
+            //     if (inventoryItem.UseItemAfterPickup)
+            //     {
+            //         Inventory.UseItem(inventoryItem);
+            //     }
+            //     Hud.CloseMessagePanel();
+            //     mInteractItem = null;
+            // }
             //else
             //{
             //    if (mInteractItem.ContinueInteract())
@@ -405,7 +376,7 @@ public class PlayerControllerAdapted : MonoBehaviour
         }
     }
 
-    private InteractableItemBase mInteractItem = null;
+    private InteractableItemBaseClass mInteractItem = null;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -414,7 +385,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     private void TryInteraction(Collider other)
     {
-        InteractableItemBase item = other.GetComponent<InteractableItemBase>();
+        InteractableItemBaseClass item = other.GetComponent<InteractableItemBaseClass>();
 
         if (item != null)
         {
@@ -429,7 +400,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        InteractableItemBase item = other.GetComponent<InteractableItemBase>();
+        InteractableItemBaseClass item = other.GetComponent<InteractableItemBaseClass>();
         if (item != null)
         {
             Hud.CloseMessagePanel();
@@ -458,7 +429,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
         transform.Rotate(0, turnAmount * RotationSpeed * Time.deltaTime, 0);
 
-        if (_characterController.isGrounded || mExternalMovement != Vector3.zero)
+        if (_characterController.isGrounded)
         {
             _moveDirection = transform.forward * move.magnitude;
 

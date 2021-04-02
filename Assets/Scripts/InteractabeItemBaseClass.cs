@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public enum EnumItemType
 {
@@ -17,13 +18,17 @@ public class InteractableItemBaseClass : MonoBehaviour
 
     public Sprite Image;
 
-    public string InteractText = "Press F to pickup the item";
+    public string InteractText = "Right click to interact with item";
 
     public EnumItemType ItemType;
 
+    public ParticleSystem _interactionCue;
+
     public virtual void OnInteractAnimation(Animator animator)
     {
+        
         animator.SetTrigger("tr_pickup");
+        
     }
 
     public virtual void OnInteract()
@@ -34,4 +39,5 @@ public class InteractableItemBaseClass : MonoBehaviour
     {
         return true;   
     }
+    
 }

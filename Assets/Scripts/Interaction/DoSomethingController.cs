@@ -30,7 +30,6 @@ public class DoSomethingController : MonoBehaviour
         Instantiate(_plantPrefab, transform.position + new Vector3(0,-0.3f,0),  Quaternion.identity, this.transform);
 
         InteractionCue.Play();
-        
     }
     
     //watering
