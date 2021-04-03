@@ -8,6 +8,8 @@ public class Bed : InteractableItemBaseClass {
     [SerializeField]
     private GameObject _plantPrefab;
     
+    //_plantPrefab = (GameObject)Instantiate(Resources.Load("Plant"));
+    
     
     [SerializeField] public float interactionDelay = 20;
     private bool isPlanted = false;
@@ -32,6 +34,7 @@ public class Bed : InteractableItemBaseClass {
         {
             Planting();
             bedMode = BedFSM.planted;
+            Debug.Log("Planting");
     
         }
             
@@ -39,6 +42,7 @@ public class Bed : InteractableItemBaseClass {
         {
             Watering();
             bedMode = BedFSM.growth;
+            Debug.Log("Watering");
     
         }
             
@@ -46,6 +50,7 @@ public class Bed : InteractableItemBaseClass {
         {
             Harvesting();
             bedMode = BedFSM.plain;
+            Debug.Log("Harvesting");
         }
 
         
@@ -54,17 +59,13 @@ public class Bed : InteractableItemBaseClass {
         
     }
     
-
     
-
-    
-
-
         public void Planting()
         {
             Debug.Log("Planting");
-            // GameObject plant = (GameObject)Instantiate(Resources.Load("Plant")); 
-            Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+            GameObject plant = (GameObject)Instantiate(Resources.Load("Plant")); 
+            Instantiate(plant, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+            //Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
             
             _interactionCue.Play();
             
