@@ -11,7 +11,8 @@ public class Bed : InteractableItemBaseClass {
     //_plantPrefab = (GameObject)Instantiate(Resources.Load("Plant"));
     
     
-    [SerializeField] public float interactionDelay = 20;
+    [SerializeField] 
+    public float interactionDelay = 20;
     private bool isPlanted = false;
     private float lastInteractionTime = 0f;
     

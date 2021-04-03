@@ -27,7 +27,7 @@ public class InteractableItemBaseClass : MonoBehaviour
     public virtual void OnInteractAnimation(Animator animator)
     {
         
-        animator.SetTrigger("tr_pickup");
+        //animator.SetTrigger("tr_pickup");
         
     }
 
