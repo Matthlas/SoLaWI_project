@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1552221846865693554}
   - component: {fileID: 7462250325636279403}
   m_Layer: 0
-  m_Name: Plant
+  m_Name: Seed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3638427549206609116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.514199, y: 0.49703217, z: 23.477615}
-  m_LocalScale: {x: 0.3, y: 0.07, z: 0.3}
+  m_LocalScale: {x: 0.3, y: 10.1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,12 +91,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3638427549206609116}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 5
+  m_Height: 15.454128
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &7462250325636279403
 Animator:
   serializedVersion: 3

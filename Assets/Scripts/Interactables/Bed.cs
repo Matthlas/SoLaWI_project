@@ -7,7 +7,9 @@ public class Bed : InteractableItemBaseClass {
     
     [SerializeField]
     private GameObject _plantPrefab;
-    
+
+    [SerializeField] 
+    private Vector3 growthRate;
     //_plantPrefab = (GameObject)Instantiate(Resources.Load("Plant"));
     
     
@@ -33,25 +35,28 @@ public class Bed : InteractableItemBaseClass {
         //perform an action depending on the mode
         if (bedMode == BedFSM.plain)
         {
+            Debug.Log("Planting");
             Planting();
             bedMode = BedFSM.planted;
-            Debug.Log("Planting");
+            
     
         }
             
         else if (bedMode == BedFSM.planted)
         {
+            Debug.Log("Watering");
             Watering();
             bedMode = BedFSM.growth;
-            Debug.Log("Watering");
+            
     
         }
             
         else if (bedMode == BedFSM.growth)
         {
+            Debug.Log("Harvesting");
             Harvesting();
             bedMode = BedFSM.plain;
-            Debug.Log("Harvesting");
+            
         }
 
         
@@ -63,31 +68,28 @@ public class Bed : InteractableItemBaseClass {
     
         public void Planting()
         {
-            Debug.Log("Planting");
-            GameObject plant = (GameObject)Instantiate(Resources.Load("Plant")); 
-            Instantiate(plant, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
-            //Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+            //GameObject plant = Instantiate(plant, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
             
+            Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+            //GameObject.Find("Seed").GetComponent<Plant>().Planting();
             _interactionCue.Play();
             
         }
-    
+        
+
         public void Watering()
-        {
-            Debug.Log("Watering");
-            
-            _interactionCue.Play();
-        }
+                {
+                    _plantPrefab.transform.localScale += growthRate;
+                    _interactionCue.Play();
+                }
         
         public void Harvesting()
         {
             Debug.Log("Harvesting");
-            
+            //Destroy(current_plant);
             _interactionCue.Play();
         }
         
 
 }
-
-
 
