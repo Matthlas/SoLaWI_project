@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 264832454830756070}
   - component: {fileID: 1552221846865693554}
   - component: {fileID: 7462250325636279403}
+  - component: {fileID: -8471856575176698354}
   m_Layer: 0
   m_Name: Seed
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3638427549206609116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.514199, y: 0.49703217, z: 23.477615}
-  m_LocalScale: {x: 0.3, y: 10.1, z: 0.3}
+  m_LocalScale: {x: 0.3, y: 0, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -116,3 +117,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-8471856575176698354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3638427549206609116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346978f5a75e04d1eb0dc41f3ffa973b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Image: {fileID: 0}
+  InteractText: Right click to interact with item
+  ItemType: 0
+  _interactionCue: {fileID: 9089613388220505825, guid: 2052436cd2dcdae439435aafb75d9b21, type: 3}
+  _plantPrefab: {fileID: 0}
+  growthRate: {x: 0, y: 0.1, z: 0}
+  interactionDelay: 20
