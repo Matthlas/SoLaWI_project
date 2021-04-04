@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 958722014476425858}
   - component: {fileID: 958722014476425862}
   m_Layer: 0
-  m_Name: NewInteractableBed
+  m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,10 +111,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Right click to interact with item
+  InteractText: Left click to interact with item
   ItemType: 0
   _interactionCue: {fileID: 8316701143637202629}
   _plantPrefab: {fileID: 3638427549206609116, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+  growthRate: {x: 0, y: 0, z: 0}
   interactionDelay: 20
 --- !u!1001 &958722015279188004
 PrefabInstance:
