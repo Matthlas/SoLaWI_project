@@ -15,6 +15,10 @@ public class Plant : InteractableItemBaseClass {
     private bool isPlanted = false;
     private float lastInteractionTime = 0f;
     
+    private bool growingCondition = true;
+    public float growBy = 2f;
+    private float growthUpdateRate = 2f;
+    
     //finite state machine for plant
     private enum BedFSM
     {
@@ -25,6 +29,11 @@ public class Plant : InteractableItemBaseClass {
     }
     // default state
     BedFSM bedMode = BedFSM.plain;
+    
+    void Start() {
+        InvokeRepeating("Grow", growthUpdateRate, growthUpdateRate);
+        // There is also "Cancel Invoke" might be helpful. But changing the growing condition is already enough I think
+    }
 
     public override void OnInteract()
     {
@@ -49,11 +58,6 @@ public class Plant : InteractableItemBaseClass {
             Harvesting();
             bedMode = BedFSM.plain;
         }
-
-        
-
-            // GetComponent<Animator>().SetBool("open", mIsOpen);
-        
     }
     
     
@@ -76,6 +80,15 @@ public class Plant : InteractableItemBaseClass {
             _interactionCue.Play();
         }
         
+        
+
+        
+        void Grow() {
+            if (!growingCondition) return;
+            this.transform.localScale += (growBy * growthRate);
+            Debug.Log("Growing");
+        }
+
 
 }
 
