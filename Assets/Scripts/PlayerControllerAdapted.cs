@@ -7,6 +7,13 @@ using UnityEngine.EventSystems;
 
 public class PlayerControllerAdapted : MonoBehaviour
 {
+    public enum Mode {
+        Säen,
+        Giessen,
+        Jäten,
+        Ernten
+
+    }
     #region Private Members
 
     private Animator _animator;
@@ -17,7 +24,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     private Vector3 _moveDirection = Vector3.zero;
 
-    private InteractableItemBaseClass mCurrentItem = null;
+    private InventoryItemBase mCurrentItem = null;
 
     // private HealthBar mHealthBar;
 
@@ -32,7 +39,8 @@ public class PlayerControllerAdapted : MonoBehaviour
     #endregion
     private InteractableItemBaseClass mInteractItem = null;
     private List<InteractableItemBaseClass> InteractItemsList = new List<InteractableItemBaseClass>();
-
+    private Mode mode;
+    
     #region Public Members
 
     public float Speed = 5.0f;
@@ -61,8 +69,9 @@ public class PlayerControllerAdapted : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
-        // Inventory.ItemUsed += Inventory_ItemUsed;
-        // Inventory.ItemRemoved += Inventory_ItemRemoved;
+        mode = Mode.Säen;
+        //Inventory.ItemUsed += Inventory_ItemUsed;
+        //Inventory.ItemRemoved += Inventory_ItemRemoved;
 
         // mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
         // mHealthBar.Min = 0;
@@ -80,48 +89,48 @@ public class PlayerControllerAdapted : MonoBehaviour
     }
 
 
-    // #region Inventory
+     #region Inventory
+    
+     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
+     {
+         InventoryItemBase item = e.Item;
+    
+         GameObject goItem = (item as MonoBehaviour).gameObject;
+         goItem.SetActive(true);
+         goItem.transform.parent = null;
+         
+         if (item == mCurrentItem)
+             mCurrentItem = null;
+    
+     }
+    
+     private void SetItemActive(InventoryItemBase item, bool active)
+     {
+         GameObject currentItem = (item as MonoBehaviour).gameObject;
+         currentItem.SetActive(active);
+         currentItem.transform.parent = active ? Hand.transform : null;
+     }
     //
-    // private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
-    // {
-    //     InventoryItemBase item = e.Item;
     //
-    //     GameObject goItem = (item as MonoBehaviour).gameObject;
-    //     goItem.SetActive(true);
-    //     goItem.transform.parent = null;
-    //
-    //     if (item == mCurrentItem)
-    //         mCurrentItem = null;
-    //
-    // }
-    //
-    // private void SetItemActive(InventoryItemBase item, bool active)
-    // {
-    //     GameObject currentItem = (item as MonoBehaviour).gameObject;
-    //     currentItem.SetActive(active);
-    //     currentItem.transform.parent = active ? Hand.transform : null;
-    // }
-    //
-    //
-    // private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
-    // {
-    //     if (e.Item.ItemType != EItemType.Consumable)
-    //     {
-    //         // If the player carries an item, un-use it (remove from player's hand)
-    //         if (mCurrentItem != null)
-    //         {
-    //             SetItemActive(mCurrentItem, false);
-    //         }
-    //
-    //         InventoryItemBase item = e.Item;
-    //
-    //         // Use item (put it to hand of the player)
-    //         SetItemActive(item, true);
-    //
-    //         mCurrentItem = e.Item;
-    //     }
-    //
-    // }
+     private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
+     {
+         if (e.Item.ItemType != EItemType.Consumable)
+         {
+             // If the player carries an item, un-use it (remove from player's hand)
+             if (mCurrentItem != null)
+             {
+                 SetItemActive(mCurrentItem, false);
+             }
+    
+             InventoryItemBase item = e.Item;
+    
+             // Use item (put it to hand of the player)
+             SetItemActive(item, true);
+    
+             mCurrentItem = e.Item;
+         }
+    
+     }
     //
     // private int Attack_1_Hash = Animator.StringToHash("Base Layer.Attack_1");
     //
@@ -183,7 +192,7 @@ public class PlayerControllerAdapted : MonoBehaviour
     //     }
     // }
     //
-    // #endregion
+     #endregion
 
     // #region Health & Hunger
     //
@@ -462,5 +471,30 @@ public class PlayerControllerAdapted : MonoBehaviour
         _moveDirection.y -= Gravity * Time.deltaTime;
 
         _characterController.Move(_moveDirection * Time.deltaTime);
+    }
+
+    public void setMode(KeyCode key)
+    {
+        if (key.Equals(KeyCode.Alpha1))
+        {
+            mode = Mode.Säen;
+        }
+        else if (key.Equals(KeyCode.Alpha2))
+        {
+            mode = Mode.Giessen;
+        }
+        else if (key.Equals(KeyCode.Alpha3))
+        {
+            mode = Mode.Jäten;
+        }
+        else if (key.Equals(KeyCode.Alpha4))
+        {
+            mode = Mode.Ernten;
+        }
+    }
+
+    public Mode getMode()
+    {
+        return mode;
     }
 }

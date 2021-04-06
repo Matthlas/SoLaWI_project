@@ -22,8 +22,10 @@ public class ItemClickHandler : MonoBehaviour
         {
             FadeToColor(_button.colors.pressedColor);
 
+            GameObject.Find("Player").GetComponent<PlayerControllerAdapted>().setMode(_Key);
             // Click the button
-            _button.onClick.Invoke();
+            //_button.onClick.Invoke();
+            
         }
         else if(Input.GetKeyUp(_Key))
         {
