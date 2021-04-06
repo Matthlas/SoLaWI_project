@@ -7,7 +7,7 @@ public class Plant : MonoBehaviour {
 
     
 
-    [SerializeField] public float maxSize = 5f;
+    [SerializeField] public float maxSize = 6f;
     [SerializeField] public float BaseGrowthRate = 0.1f;
     
     
@@ -15,37 +15,46 @@ public class Plant : MonoBehaviour {
     private float currentGrowthRate;
     private float growthTickRate = 2f;
     
-    public bool growingCondition = true;
+    private bool watered = false;
+
+    public int obstructiveWeeds = 0;
+    
+    public bool growingCondition = true; //Perhaps unnecessary
     public bool readyToHarvest = false;
     
     void Start()
     {
         currentGrowthRate = BaseGrowthRate;
         InvokeRepeating("Grow", growthTickRate, growthTickRate);
-        // There is also "Cancel Invoke" might be helpful. But changing the growing condition is already enough I think
+        // There is also "Cancel Invoke" might be helpful. But changing the growing condition is already enough I think. Could also be replaced by a coroutine
     }
     
     void Grow() {
-        //Only grow unitl max size
-        if (this.transform.localScale.y > maxSize)
+        //Only grow until max size
+        if (this.transform.localScale.y >= maxSize)
         {
             growingCondition = false;
             readyToHarvest = true;
         }
+
+        if (obstructiveWeeds > 3) return;
         
         if (!growingCondition) return;
         
         this.transform.localScale += (currentGrowthRate * _growingDirection);
     }
 
-    public void water()
+    public void Water()
     {
+        if (watered) return;
+
+        watered = true;
         currentGrowthRate *= 4;
-        Invoke("Dry", 5f);
     }
     
-    private void Dry()
+    public void Dry()
     {
+        watered = false;
         currentGrowthRate = BaseGrowthRate;
     }
 
