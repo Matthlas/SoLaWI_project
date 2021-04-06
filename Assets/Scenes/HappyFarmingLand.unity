@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43733805, g: 0.48511863, b: 0.5653911, a: 1}
+  m_IndirectSpecularColor: {r: 0.43733805, g: 0.4851187, b: 0.56539154, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114325076}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1502,6 +1502,7 @@ GameObject:
   - component: {fileID: 336377165}
   - component: {fileID: 336377164}
   - component: {fileID: 336377163}
+  - component: {fileID: 336377166}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -1572,7 +1573,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 336377164}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336377166}
+        m_TargetAssemblyTypeName: ItemClickHandler, Assembly-CSharp
+        m_MethodName: OnItemClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &336377164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,6 +1624,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336377161}
   m_CullTransparentMesh: 1
+--- !u!114 &336377166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336377161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 1613634593}
+  _Key: 49
 --- !u!4 &345795917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4852549741192828, guid: 2fe7a9ef6e9f71845a2043158d302b34, type: 3}
@@ -1982,6 +2009,7 @@ GameObject:
   - component: {fileID: 427402079}
   - component: {fileID: 427402078}
   - component: {fileID: 427402077}
+  - component: {fileID: 427402080}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -2052,7 +2080,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427402078}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 427402080}
+        m_TargetAssemblyTypeName: ItemClickHandler, Assembly-CSharp
+        m_MethodName: OnItemClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &427402078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2091,6 +2131,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427402075}
   m_CullTransparentMesh: 1
+--- !u!114 &427402080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427402075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 1613634593}
+  _Key: 50
 --- !u!1001 &437422061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2314,7 +2368,7 @@ GameObject:
   - component: {fileID: 477114799}
   - component: {fileID: 477114798}
   m_Layer: 5
-  m_Name: Slot (1)
+  m_Name: Giessen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3810,6 +3864,7 @@ GameObject:
   - component: {fileID: 725583043}
   - component: {fileID: 725583042}
   - component: {fileID: 725583041}
+  - component: {fileID: 725583044}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -3880,7 +3935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 725583042}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 725583044}
+        m_TargetAssemblyTypeName: ItemClickHandler, Assembly-CSharp
+        m_MethodName: OnItemClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &725583042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3919,6 +3986,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725583039}
   m_CullTransparentMesh: 1
+--- !u!114 &725583044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725583039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 1613634593}
+  _Key: 52
 --- !u!1001 &747228126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4958,7 +5039,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.12331069, y: -4.3644816e-10, z: 5.4232622e-11, w: 0.99236816}
+  m_LocalRotation: {x: 0.12331069, y: -0.0000000079494775, z: 9.877942e-10, w: 0.99236816}
   m_LocalPosition: {x: -9.71, y: 4.147084, z: -13.9453335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6977,6 +7058,7 @@ GameObject:
   - component: {fileID: 1264966156}
   - component: {fileID: 1264966155}
   - component: {fileID: 1264966154}
+  - component: {fileID: 1264966157}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -7047,7 +7129,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1264966155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1264966157}
+        m_TargetAssemblyTypeName: ItemClickHandler, Assembly-CSharp
+        m_MethodName: OnItemClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1264966155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7086,6 +7180,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264966152}
   m_CullTransparentMesh: 1
+--- !u!114 &1264966157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264966152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 1613634593}
+  _Key: 51
 --- !u!1001 &1274794930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8454,7 +8562,7 @@ GameObject:
   - component: {fileID: 1495902254}
   - component: {fileID: 1495902253}
   m_Layer: 5
-  m_Name: Slot (4)
+  m_Name: Slot(4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8794,6 +8902,7 @@ GameObject:
   - component: {fileID: 1613634591}
   - component: {fileID: 1613634590}
   - component: {fileID: 1613634592}
+  - component: {fileID: 1613634593}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -8893,6 +9002,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1613634593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613634588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1b6f52a2d824d49b01f8505d9e0ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1656465204
 GameObject:
   m_ObjectHideFlags: 3
@@ -10023,7 +10144,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850529752}
-  m_LocalRotation: {x: 0.12547086, y: 0.000000004267601, z: -5.3972493e-10, w: 0.9920973}
+  m_LocalRotation: {x: 0.12547086, y: -0.0000000042676014, z: 5.39725e-10, w: 0.9920973}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10605,7 +10726,7 @@ GameObject:
   - component: {fileID: 2013079173}
   - component: {fileID: 2013079172}
   m_Layer: 5
-  m_Name: Slot (2)
+  m_Name: "J\xE4ten"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10681,7 +10802,7 @@ GameObject:
   - component: {fileID: 2013686492}
   - component: {fileID: 2013686491}
   m_Layer: 5
-  m_Name: Slot (3)
+  m_Name: Ernten
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10757,7 +10878,7 @@ GameObject:
   - component: {fileID: 2025337436}
   - component: {fileID: 2025337435}
   m_Layer: 5
-  m_Name: Slot
+  m_Name: "S\xE4en"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10803,7 +10924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5d4bb94fac5d34a33accf93b0fbe34a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
