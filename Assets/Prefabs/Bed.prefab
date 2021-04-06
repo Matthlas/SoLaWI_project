@@ -111,11 +111,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Left click to interact with item
+  InteractText: Right click to interact with item
   ItemType: 0
   _interactionCue: {fileID: 8316701143637202629}
   _plantPrefab: {fileID: -8471856575176698354, guid: 8664426138227486da5dc2247092f4a4, type: 3}
-  interactionDelay: 20
+  _weedPrefab: {fileID: 100000, guid: ba9003367410cc047bdcb941db473a1c, type: 3}
 --- !u!1001 &958722015279188004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,6 +126,10 @@ PrefabInstance:
     - target: {fileID: 9089613388220505824, guid: 2052436cd2dcdae439435aafb75d9b21, type: 3}
       propertyPath: m_Name
       value: IneractionCue
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089613388220505825, guid: 2052436cd2dcdae439435aafb75d9b21, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9089613388220505855, guid: 2052436cd2dcdae439435aafb75d9b21, type: 3}
       propertyPath: m_RootOrder
