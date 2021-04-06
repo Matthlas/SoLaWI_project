@@ -35,6 +35,18 @@ public class InteractableItemBaseClass : MonoBehaviour
     {
     }
 
+    public virtual void Select()
+    {
+        //this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
+        this.transform.position += new Vector3(0,0.1f,0);
+    }
+
+    public virtual void Unselect()
+    {
+        //this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0f);
+        this.transform.position -= new Vector3(0,0.1f,0);
+    }
+
     public virtual bool CanInteract(Collider other)
     {
         return true;   

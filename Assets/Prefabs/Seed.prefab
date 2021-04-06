@@ -130,6 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSize: 5
+  BaseGrowthRate: 0.5
   growingCondition: 1
   readyToHarvest: 0
-  growthRate: 0.5
