@@ -129,11 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346978f5a75e04d1eb0dc41f3ffa973b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  Image: {fileID: 0}
-  InteractText: Right click to interact with item
-  ItemType: 0
-  _interactionCue: {fileID: 9089613388220505825, guid: 2052436cd2dcdae439435aafb75d9b21, type: 3}
-  _plantPrefab: {fileID: 0}
-  growthRate: {x: 0, y: 0.1, z: 0}
-  interactionDelay: 20
+  maxSize: 5
+  growingCondition: 1
+  readyToHarvest: 0
+  growthRate: 0.5

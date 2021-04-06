@@ -6,28 +6,49 @@ public class Bed : InteractableItemBaseClass {
 
     
     [SerializeField]
-    private GameObject _plantPrefab;
+    private Plant _plantPrefab;
+    private Plant _myPlant;
+
+    private Vector3 growthRate;
+    private bool watered = false;
     
     
-    
-    [SerializeField] 
-    public float interactionDelay = 20;
-    private bool isPlanted = false;
-    private float lastInteractionTime = 0f;
-    
+    //finite state machine for plant
+    private enum BedFSM
+    {
+        plain,
+        planted
+
+    }
+    // default state
+    BedFSM bedMode = BedFSM.plain;
     
 
     public override void OnInteract()
     {
-        if (!isPlanted)
+
+        //perform an action depending on the mode
+        if (bedMode == BedFSM.plain)
         {
-            Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
-            _interactionCue.Play();
-            isPlanted = true;
+            Debug.Log("Planting");
+            Planting();
+            bedMode = BedFSM.planted;
         }
-        else
+        else if (bedMode == BedFSM.planted && !_myPlant.readyToHarvest)
+        {
+            Debug.Log("Watering");
+            Watering();
+        }
+        else if (bedMode == BedFSM.planted && watered)
         {
             Debug.Log("Bed is chillin");
+        }
+
+        else if (bedMode == BedFSM.planted && _myPlant.readyToHarvest)
+        {
+            Debug.Log("Harvesting");
+            Harvesting();
+            bedMode = BedFSM.plain;
         }
 
 
@@ -36,7 +57,31 @@ public class Bed : InteractableItemBaseClass {
         
     }
     
-    
+    public void Planting()
+    {
+        _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+        _interactionCue.Play();
+            
+    }
+        
+    public void Watering() 
+    {
+        _myPlant.gameObject.transform.localScale += (80*growthRate);
+        _interactionCue.Play();
+        watered = true;
+        Invoke("Dry", 5f);
+    }
+        
+    public void Harvesting()
+    {
+        Destroy(_myPlant.gameObject);
+        _interactionCue.Play();
+    }
+
+    private void Dry()
+    {
+        watered = false;
+    }
 
 }
 
