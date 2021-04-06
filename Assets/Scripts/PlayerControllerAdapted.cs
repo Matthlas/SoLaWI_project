@@ -30,6 +30,8 @@ public class PlayerControllerAdapted : MonoBehaviour
     // private bool mCanTakeDamage = true;
 
     #endregion
+    private InteractableItemBaseClass mInteractItem = null;
+    private List<InteractableItemBaseClass> InteractItemsList = new List<InteractableItemBaseClass>();
 
     #region Public Members
 
@@ -50,6 +52,7 @@ public class PlayerControllerAdapted : MonoBehaviour
     public Transform cam;
 
     #endregion
+    
 
     // public UnityEvent QuestCompleted;
 
@@ -330,23 +333,24 @@ public class PlayerControllerAdapted : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
         InteractWithItem();
-
         movePlayer();
     }
 
     public void InteractWithItem()
     {
         
-        if (mInteractItem != null && Input.GetMouseButtonDown(0))
+        if (InteractItemsList.Count > 0 && Input.GetMouseButtonDown(0))
         {
-            Debug.Log("True");
-            // Interact animation 
-            mInteractItem.OnInteractAnimation(_animator);
-            // Interaction function of the object
-            mInteractItem.OnInteract();
+            
+            for (int i = 0; i < InteractItemsList.Count; i++)
+            {
+                // Interact animation 
+                InteractItemsList[i].OnInteractAnimation(_animator);
+                // Interaction function of the object
+                InteractItemsList[i].OnInteract();
+            }
+
 
             // if (mInteractItem is InventoryItemBase)
             // {
@@ -376,7 +380,7 @@ public class PlayerControllerAdapted : MonoBehaviour
         }
     }
 
-    private InteractableItemBaseClass mInteractItem = null;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -391,9 +395,10 @@ public class PlayerControllerAdapted : MonoBehaviour
         {
             if (item.CanInteract(other))
             {
-                mInteractItem = item;
-
-                Hud.OpenMessagePanel(mInteractItem);
+                Hud.OpenMessagePanel(item);
+                item.Select();
+                InteractItemsList.Add(item);
+                
             }
         }
     }
@@ -404,7 +409,8 @@ public class PlayerControllerAdapted : MonoBehaviour
         if (item != null)
         {
             Hud.CloseMessagePanel();
-            mInteractItem = null;
+            InteractItemsList.Remove(item);
+            item.Unselect();
         }
     }
 
