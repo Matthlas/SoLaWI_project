@@ -53,7 +53,6 @@ public class ItemClickHandler : MonoBehaviour
 
     public void OnItemClicked()
     {
-        Debug.Log("yip");
         GameObject.Find("Player").GetComponent<PlayerControllerAdapted>().setMode(_Key);
         /*InventoryItemBase item = AttachedItem;
 
