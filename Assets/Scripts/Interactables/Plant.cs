@@ -51,6 +51,7 @@ public class Plant : MonoBehaviour
         {
             currentGrowthRate = 0;
             health -= 1;
+            this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
         }
 
         if (obstructiveWeeds >= 10)
