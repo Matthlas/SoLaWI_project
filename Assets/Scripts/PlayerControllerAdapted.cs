@@ -392,6 +392,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
 
 
+    //if colliding wih interactable item show message
     private void OnTriggerEnter(Collider other)
     {
         TryInteraction(other);
@@ -474,6 +475,7 @@ public class PlayerControllerAdapted : MonoBehaviour
         _characterController.Move(_moveDirection * Time.deltaTime);
     }
 
+    //change player mode according to selected iventory item
     public void setMode(KeyCode key)
     {
         if (key.Equals(KeyCode.Alpha1))

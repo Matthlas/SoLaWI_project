@@ -73,23 +73,19 @@ public class Bed : InteractableItemBaseClass {
         // bed is always watered but has different effect depending on status of plant
         //Change color to darker (bed is wet)
         this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
-        watered = true;
+        
         //Dry after some time
         Invoke("Dry", 5f);
         
         _interactionCue.Play();
         
-        //if bed is dry and there is a plant
-        if (!watered && bedMode == BedFSM.planted)
+        //if we have plant water plant
+        if (bedMode == BedFSM.planted)
         {
             _myPlant.Water();
             
         }
-        else
-        {
-            //if already wet, plant dies after some time
-            return;
-        }
+       
         
         
     }
@@ -133,7 +129,7 @@ public class Bed : InteractableItemBaseClass {
 
     public void Dig()
     {
-        
+        Destroy(_myPlant.gameObject);
     }
     
     
