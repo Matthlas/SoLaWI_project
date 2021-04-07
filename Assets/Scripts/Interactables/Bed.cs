@@ -35,10 +35,12 @@ public class Bed : InteractableItemBaseClass {
             Planting();
             bedMode = BedFSM.planted;
         }
+        // plant is still growing and unwatered, then we water
         else if (bedMode == BedFSM.planted && !_myPlant.readyToHarvest && !watered)
         {
             Watering();
         }
+        //if its watered we remove the weeds
         else if (bedMode == BedFSM.planted && !_myPlant.readyToHarvest && watered)
         {
             Weeding();
@@ -63,7 +65,7 @@ public class Bed : InteractableItemBaseClass {
     public void Watering() 
     {
         _myPlant.Water();
-        //Change color to darker
+        //Change color to darker (bed is wet)
         this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
         watered = true;
         //Dry after some time
