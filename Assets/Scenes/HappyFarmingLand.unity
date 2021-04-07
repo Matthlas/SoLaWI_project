@@ -434,7 +434,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114325076}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7271,6 +7271,7 @@ GameObject:
   - component: {fileID: 1274919593}
   - component: {fileID: 1274919592}
   - component: {fileID: 1274919591}
+  - component: {fileID: 1274919594}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -7341,7 +7342,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1274919592}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1274919594}
+        m_TargetAssemblyTypeName: ItemClickHandler, Assembly-CSharp
+        m_MethodName: OnItemClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1274919592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7380,6 +7393,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274919589}
   m_CullTransparentMesh: 1
+--- !u!114 &1274919594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274919589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 1613634593}
+  _Key: 53
 --- !u!1001 &1277980114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8562,7 +8589,7 @@ GameObject:
   - component: {fileID: 1495902254}
   - component: {fileID: 1495902253}
   m_Layer: 5
-  m_Name: Slot(4)
+  m_Name: Buddeln
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10924,7 +10951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5d4bb94fac5d34a33accf93b0fbe34a5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11130,7 +11157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 571ce5288fe834df5b10c487ef4a460a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d4bb94fac5d34a33accf93b0fbe34a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

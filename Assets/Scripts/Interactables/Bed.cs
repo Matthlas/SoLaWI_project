@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class Bed : InteractableItemBaseClass {
@@ -48,6 +49,11 @@ public class Bed : InteractableItemBaseClass {
         else if (mode == PlayerControllerAdapted.Mode.Ernten)
         {
             Harvesting();
+            bedMode = BedFSM.plain;
+        }
+        else if (mode == PlayerControllerAdapted.Mode.Buddeln)
+        {
+            Dig();
             bedMode = BedFSM.plain;
         }
         
@@ -103,6 +109,11 @@ public class Bed : InteractableItemBaseClass {
         Weeding();
         
         _interactionCue.Play();
+    }
+
+    public void Dig()
+    {
+        
     }
     
     

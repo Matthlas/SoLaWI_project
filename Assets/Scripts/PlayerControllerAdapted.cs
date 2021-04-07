@@ -11,7 +11,8 @@ public class PlayerControllerAdapted : MonoBehaviour
         Säen,
         Giessen,
         Jäten,
-        Ernten
+        Ernten,
+        Buddeln
 
     }
     #region Private Members
@@ -490,6 +491,10 @@ public class PlayerControllerAdapted : MonoBehaviour
         else if (key.Equals(KeyCode.Alpha4))
         {
             mode = Mode.Ernten;
+        }
+        else if (key.Equals(KeyCode.Alpha5))
+        {
+            mode = Mode.Buddeln;
         }
     }
 
