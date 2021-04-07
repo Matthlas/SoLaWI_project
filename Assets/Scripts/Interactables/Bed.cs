@@ -29,23 +29,23 @@ public class Bed : InteractableItemBaseClass {
 
     public override void OnInteract()
     {
+        PlayerControllerAdapted.Mode mode = 
+            GameObject.Find("Player").GetComponent<PlayerControllerAdapted>().getMode();
         //perform an action depending on the mode
-        if (bedMode == BedFSM.plain)
+        if (mode == PlayerControllerAdapted.Mode.Säen)
         {
             Planting();
             bedMode = BedFSM.planted;
         }
-        // plant is still growing and unwatered, then we water
-        else if (bedMode == BedFSM.planted && !_myPlant.readyToHarvest && !watered)
+        else if (mode == PlayerControllerAdapted.Mode.Giessen)
         {
             Watering();
         }
-        //if its watered we remove the weeds
-        else if (bedMode == BedFSM.planted && !_myPlant.readyToHarvest && watered)
+        else if (mode == PlayerControllerAdapted.Mode.Jäten)
         {
             Weeding();
         }
-        else if (bedMode == BedFSM.planted && _myPlant.readyToHarvest)
+        else if (mode == PlayerControllerAdapted.Mode.Ernten)
         {
             Harvesting();
             bedMode = BedFSM.plain;
@@ -94,7 +94,11 @@ public class Bed : InteractableItemBaseClass {
     
     public void Harvesting()
     {
-        Destroy(_myPlant.gameObject);
+        if (_myPlant.gameObject != null)
+        {
+            Destroy(_myPlant.gameObject);
+        }
+        
         _spawningWeeds = false;
         Weeding();
         
