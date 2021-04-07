@@ -22,9 +22,10 @@ public class ItemClickHandler : MonoBehaviour
         {
             FadeToColor(_button.colors.pressedColor);
 
-            GameObject.Find("Player").GetComponent<PlayerControllerAdapted>().setMode(_Key);
+            OnItemClicked();
             // Click the button
             //_button.onClick.Invoke();
+            
             
         }
         else if(Input.GetKeyUp(_Key))
@@ -52,12 +53,14 @@ public class ItemClickHandler : MonoBehaviour
 
     public void OnItemClicked()
     {
-        InventoryItemBase item = AttachedItem;
+        Debug.Log("yip");
+        GameObject.Find("Player").GetComponent<PlayerControllerAdapted>().setMode(_Key);
+        /*InventoryItemBase item = AttachedItem;
 
         if (item != null)
         {
             _Inventory.UseItem(item);
-        }
+        }*/
     }
 
 }
