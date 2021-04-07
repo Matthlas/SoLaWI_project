@@ -12,7 +12,7 @@ public class Bed : InteractableItemBaseClass {
 
     [SerializeField] private GameObject _weedPrefab;
     private bool _spawningWeeds = false;
-    private float weedSpanRate = 2f;
+    private float weedSpanRate = 10f;
     private GameObject newWeed;
     private List<GameObject> weedList = new List<GameObject>();
 
@@ -70,7 +70,7 @@ public class Bed : InteractableItemBaseClass {
         
     public void Watering() 
     {
-        _myPlant.Water();
+        // bed is always watered but has different effect depending on status of plant
         //Change color to darker (bed is wet)
         this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
         watered = true;
@@ -78,11 +78,28 @@ public class Bed : InteractableItemBaseClass {
         Invoke("Dry", 5f);
         
         _interactionCue.Play();
+        
+        //if bed is dry and there is a plant
+        if (!watered && bedMode == BedFSM.planted)
+        {
+            _myPlant.Water();
+            
+        }
+        else
+        {
+            //if already wet, plant dies after some time
+            return;
+        }
+        
+        
     }
 
     private void Dry()
     {
-        _myPlant.Dry();
+        if (bedMode == BedFSM.planted)
+        {
+            _myPlant.Dry();
+        }
         //Change color to lighter
         this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0f);
         watered = false;
@@ -90,12 +107,15 @@ public class Bed : InteractableItemBaseClass {
 
     public void Weeding()
     {
-        for (int i = 0; i < weedList.Count; i++)
+        if (bedMode == BedFSM.planted)
         {
-            Destroy(weedList[i].gameObject);
-        }
+            for (int i = 0; i < weedList.Count; i++)
+            {
+                Destroy(weedList[i].gameObject);
+            }
 
-        _myPlant.obstructiveWeeds = 0;
+            _myPlant.obstructiveWeeds = 0;
+        }
     }
     
     public void Harvesting()
