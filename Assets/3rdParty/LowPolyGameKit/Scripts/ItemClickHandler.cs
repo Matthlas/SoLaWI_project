@@ -24,14 +24,15 @@ public class ItemClickHandler : MonoBehaviour
 
             OnItemClicked();
             // Click the button
-            //_button.onClick.Invoke();
-            
-            
+            _button.onClick.Invoke();
+            _button.Select();
+
+
         }
-        else if(Input.GetKeyUp(_Key))
+        /*else if(Input.GetKeyUp(_Key))
         {
             FadeToColor(_button.colors.normalColor);
-        }
+        }*/
     }
 
     void FadeToColor(Color color)
