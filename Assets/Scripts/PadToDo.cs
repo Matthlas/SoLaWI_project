@@ -1,23 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+/*
+ Dringlichkeitsstufe 1 sehr hoch - 5 niedrig
 
-public class PadToDo : MonoBehaviour
-{
-    //give plants a colldider
-    //wenn schaufel -> neues beet anlegen
-    //    game logic refinen -> pflanzen langsamer
-   // plants collider geben
-   //animation player wieder hinzufügen
-   // giatrrenmusik und gitarre in Hand nehmen
-   // verschiedene pflanzen in logic
-   // i für instructions
-   // verscheidene pflanzen im inventar zugänglich machen
-   // pflanzen verschöenern
-   // gießanimation
-   //ernten debuggen
-   // erntezähler
-   //default modus zu gießen
-   
-   
-}
+game logic refinen -> pflanzen langsamer                    1
+animation player wieder hinzufügen                          1
+pflanzen verschöenern                                       1
+ernten debuggen                                             1
+i für instructions                                          1
+erntezähler                                                 2
+challenges einrichten                                       2
+verscheidene pflanzen im inventar zugänglich machen         2
+verschiedene pflanzen in logic                              2
+wenn schaufel -> neues beet anlegen                         3
+gießanimation                                               4
+giatrrenmusik (und gitarre in Hand nehmen)                  4 (5)
+
+give plants a colldider                                     ? wollen wir das überhaupt machen?
+
+
+
+
+
+*/
