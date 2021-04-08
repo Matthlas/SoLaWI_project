@@ -43,7 +43,7 @@ public class PlayerControllerAdapted : MonoBehaviour
     // private bool mCanTakeDamage = true;
 
     #endregion
-    private InteractableItemBaseClass mInteractItem = null;
+    //private InteractableItemBaseClass mInteractItem = null;
     private List<InteractableItemBaseClass> InteractItemsList = new List<InteractableItemBaseClass>();
     private Mode mode;
     
