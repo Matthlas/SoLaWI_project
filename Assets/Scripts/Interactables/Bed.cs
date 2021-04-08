@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Bed : InteractableItemBaseClass {
 
@@ -26,7 +28,12 @@ public class Bed : InteractableItemBaseClass {
     }
     // default state
     BedFSM bedMode = BedFSM.plain;
-    
+
+    private void Start()
+    {
+        StartCoroutine(SpawnWeeds());
+    }
+
 
     public override void OnInteract()
     {
@@ -68,7 +75,6 @@ public class Bed : InteractableItemBaseClass {
             {
                 _myPlant.Grow();
             }
-            StartCoroutine(SpawnWeeds());
 
         }
     }
@@ -121,6 +127,7 @@ public class Bed : InteractableItemBaseClass {
         {
             Destroy(weedList[i].gameObject);
         }
+        weedList.Clear();
 
         if (_myPlant != null)
         {
