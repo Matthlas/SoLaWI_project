@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using Cinemachine;
 using UnityEngine;
 
 public class Bed : InteractableItemBaseClass {
@@ -11,7 +12,6 @@ public class Bed : InteractableItemBaseClass {
     private Plant _myPlant;
 
     [SerializeField] private GameObject _weedPrefab;
-    private bool _spawningWeeds = false;
     private float weedSpanRate = 10f;
     private GameObject newWeed;
     private List<GameObject> weedList = new List<GameObject>();
@@ -61,41 +61,57 @@ public class Bed : InteractableItemBaseClass {
     
     public void Planting()
     {
-        _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
-        _spawningWeeds = true;
-        StartCoroutine(SpawnWeeds());
+        if (bedMode == BedFSM.plain){   
+            Weeding();
+            _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+            if (watered)
+            {
+                _myPlant.Grow();
+            }
+            StartCoroutine(SpawnWeeds());
         
-        _interactionCue.Play();
+            _interactionCue.Play();
+            
+        }
     }
         
     public void Watering() 
     {
-        // bed is always watered but has different effect depending on status of plant
-        //Change color to darker (bed is wet)
-        this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
-        
-        //Dry after some time
-        Invoke("Dry", 5f);
-        
-        _interactionCue.Play();
-        
-        //if we have plant water plant
-        if (bedMode == BedFSM.planted)
+        if (watered == false)
         {
-            _myPlant.Water();
+            watered = true;
             
+            //Change color to darker (bed is wet)
+            this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
+        
+            //Dry after some time
+            Invoke("Dry", 40f);
+        
+            _interactionCue.Play();
+        
+            //if we have plant water plant
+            if (_myPlant != null)
+            {
+                _myPlant.Grow();
+            
+            }
+            else
+            {
+                bedMode = BedFSM.plain;
+            }
         }
-       
-        
-        
     }
 
     private void Dry()
     {
-        if (bedMode == BedFSM.planted)
+        /*if (_myPlant != null)
         {
             _myPlant.Dry();
         }
+        else
+        {
+            bedMode = BedFSM.plain;
+        }*/
         //Change color to lighter
         this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0f);
         watered = false;
@@ -103,46 +119,73 @@ public class Bed : InteractableItemBaseClass {
 
     public void Weeding()
     {
-        if (bedMode == BedFSM.planted)
-        {
-            for (int i = 0; i < weedList.Count; i++)
-            {
-                Destroy(weedList[i].gameObject);
-            }
 
-            _myPlant.obstructiveWeeds = 0;
+        for (int i = 0; i < weedList.Count; i++)
+        {
+            Destroy(weedList[i].gameObject);
         }
+
+        if (_myPlant != null)
+        {
+            _myPlant.obstructiveWeeds = 0;
+            //if first watered then weeded, check if now plant can grow
+            if (watered && !_myPlant.growingCondition)
+            {
+                _myPlant.Grow();
+            }
+        }
+        else
+        {
+            bedMode = BedFSM.plain;
+        }
+
+
     }
     
     public void Harvesting()
     {
-        if (_myPlant.gameObject != null)
+        if (_myPlant != null)
         {
             Destroy(_myPlant.gameObject);
+            if (_myPlant.readyToHarvest)
+            {
+                //Score erhöhen für die Art der Pflanze
+            }
         }
-        
-        _spawningWeeds = false;
-        Weeding();
-        
+        bedMode = BedFSM.plain;
         _interactionCue.Play();
     }
 
     public void Dig()
     {
-        Destroy(_myPlant.gameObject);
+        if (_myPlant != null)
+        {
+            Destroy(_myPlant.gameObject);
+            
+        }
+        bedMode = BedFSM.plain;
+        Weeding();
+        
     }
     
     
     IEnumerator SpawnWeeds()
     {
-        while (_spawningWeeds)
+        while (true)
         {
-            yield return new WaitForSeconds(weedSpanRate);
-            newWeed = Instantiate(_weedPrefab, transform.position + new Vector3(Random.Range(-0.4f, 0.4f), 0.1f, Random.Range(-0.4f, 0.4f)), Quaternion.identity, this.transform);
-            weedList.Add(newWeed);
+            yield return new WaitForSeconds(weedSpanRate); 
+        newWeed = Instantiate(_weedPrefab, transform.position + new Vector3(Random.Range(-0.4f, 0.4f), 0.1f, Random.Range(-0.4f, 0.4f)), Quaternion.identity, this.transform); 
+        weedList.Add(newWeed);
+        if (_myPlant != null)
+        {
             _myPlant.obstructiveWeeds += 1;
         }
-        Weeding();
+        else
+        {
+            bedMode = BedFSM.plain;
+        }
+        
+        }
     }
 
 }
