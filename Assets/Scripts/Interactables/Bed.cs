@@ -69,9 +69,7 @@ public class Bed : InteractableItemBaseClass {
                 _myPlant.Grow();
             }
             StartCoroutine(SpawnWeeds());
-        
-            _interactionCue.Play();
-            
+
         }
     }
         
@@ -86,8 +84,7 @@ public class Bed : InteractableItemBaseClass {
         
             //Dry after some time
             Invoke("Dry", 40f);
-        
-            _interactionCue.Play();
+            
         
             //if we have plant water plant
             if (_myPlant != null)
@@ -149,11 +146,12 @@ public class Bed : InteractableItemBaseClass {
             Destroy(_myPlant.gameObject);
             if (_myPlant.readyToHarvest)
             {
+                _interactionCue.Play();
                 //Score erhöhen für die Art der Pflanze
             }
         }
         bedMode = BedFSM.plain;
-        _interactionCue.Play();
+        
     }
 
     public void Dig()
