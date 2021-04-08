@@ -2962,7 +2962,6 @@ MonoBehaviour:
   Item: {fileID: 1657161093}
   Speed: 5
   RotationSpeed: 240
-  Inventory: {fileID: 0}
   Hand: {fileID: 1657161093}
   Hud: {fileID: 1099054232}
   JumpSpeed: 7
@@ -9414,7 +9413,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 313f261fc18394bcfbc1a843e7d5840a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e41131d243695468680f6c4113421d5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9432,13 +9431,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657161093}
-  m_LocalRotation: {x: 0.6311318, y: 0.19982962, z: 0.662915, w: 0.3496921}
-  m_LocalPosition: {x: 0.0003, y: 0.00237, z: 0.00174}
-  m_LocalScale: {x: 0.001030737, y: 0.001030737, z: 0.001030737}
+  m_LocalRotation: {x: 0.6492327, y: 0.1294376, z: 0.6972549, w: 0.2749155}
+  m_LocalPosition: {x: 0.0006, y: 0.00326, z: 0.00059}
+  m_LocalScale: {x: 0.001258271, y: 0.001258271, z: 0.001258271}
   m_Children: []
   m_Father: {fileID: 939711322}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 10.164, y: 82.793, z: 133.341}
+  m_LocalEulerAnglesHint: {x: 10.164, y: 82.793, z: 145.928}
 --- !u!1001 &1666880173
 PrefabInstance:
   m_ObjectHideFlags: 0

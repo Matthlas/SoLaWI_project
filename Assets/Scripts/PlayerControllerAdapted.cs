@@ -53,8 +53,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     public float RotationSpeed = 240.0f;
 
-    //public Inventory Inventory;
-    public GameObject Inventory;
+    
     public GameObject Hand;
 
     public HUD_ours Hud;
@@ -75,7 +74,7 @@ public class PlayerControllerAdapted : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
-        mode = Mode.Säen;
+        mode = Mode.Giessen;
         //Inventory.ItemUsed += Inventory_ItemUsed;
         //Inventory.ItemRemoved += Inventory_ItemRemoved;
 
