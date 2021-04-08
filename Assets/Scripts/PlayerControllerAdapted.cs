@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class PlayerControllerAdapted : MonoBehaviour
 {
@@ -27,6 +30,8 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     private InventoryItemBase mCurrentItem = null;
 
+    public GameObject Item;
+
     // private HealthBar mHealthBar;
 
     // private HealthBar mFoodBar;
@@ -48,8 +53,8 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     public float RotationSpeed = 240.0f;
 
-    public Inventory Inventory;
-
+    //public Inventory Inventory;
+    public GameObject Inventory;
     public GameObject Hand;
 
     public HUD_ours Hud;
@@ -478,13 +483,32 @@ public class PlayerControllerAdapted : MonoBehaviour
     //change player mode according to selected iventory item
     public void setMode(KeyCode key)
     {
+        
         if (key.Equals(KeyCode.Alpha1))
         {
             mode = Mode.Säen;
+
+            Sprite picture =  GameObject.FindGameObjectWithTag("Slot1").GetComponent<Image>().sprite;
+            if (picture == null)
+            {
+                Debug.Log("nope");
+            }
+            Hand.GetComponent<SpriteRenderer>().sprite = picture;
         }
         else if (key.Equals(KeyCode.Alpha2))
         {
             mode = Mode.Giessen;
+            
+            Sprite picture =  GameObject.FindGameObjectWithTag("Slot2").GetComponent<Image>().sprite;
+            if (picture == null)
+            {
+                Debug.Log("nope");
+            }
+            Hand.GetComponent<SpriteRenderer>().sprite = picture;
+            
+
+            //picture.transform.localPosition =
+            // picture.transform.localRotation =
         }
         else if (key.Equals(KeyCode.Alpha3))
         {
