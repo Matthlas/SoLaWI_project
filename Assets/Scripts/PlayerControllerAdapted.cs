@@ -480,7 +480,7 @@ public class PlayerControllerAdapted : MonoBehaviour
         _characterController.Move(_moveDirection * Time.deltaTime);
     }
 
-    //change player mode according to selected iventory item
+    //change player mode according to selected iventory item and put item in players hand
     public void setMode(KeyCode key)
     {
         
@@ -489,38 +489,61 @@ public class PlayerControllerAdapted : MonoBehaviour
             mode = Mode.Säen;
 
             Sprite picture =  GameObject.FindGameObjectWithTag("Slot1").GetComponent<Image>().sprite;
-            if (picture == null)
-            {
-                Debug.Log("nope");
-            }
+            
             Hand.GetComponent<SpriteRenderer>().sprite = picture;
+            
+            Item.transform.localPosition = new Vector3(-0.000280000007f,0.000509999983f,0.00368000008f); 
+            Item.transform.localEulerAngles = new Vector3(10.1638374f,82.7932434f,133.340912f);
+            Item.transform.localScale = new Vector3(0.0224425513f,0.0224425513f,0.0224425513f);
         }
         else if (key.Equals(KeyCode.Alpha2))
         {
             mode = Mode.Giessen;
             
             Sprite picture =  GameObject.FindGameObjectWithTag("Slot2").GetComponent<Image>().sprite;
-            if (picture == null)
-            {
-                Debug.Log("nope");
-            }
+            
             Hand.GetComponent<SpriteRenderer>().sprite = picture;
             
-
-            //picture.transform.localPosition =
-            // picture.transform.localRotation =
+            Item.transform.localPosition = new Vector3(0.0006f, 0.00326f, 0.00059f);
+            Item.transform.localEulerAngles = new Vector3(10.164f,82.793f, 145.928f);
+            Item.transform.localScale = new Vector3(0.001258271f, 0.001258271f, 0.001258271f);
+           
         }
         else if (key.Equals(KeyCode.Alpha3))
         {
             mode = Mode.Jäten;
+            Sprite picture =  GameObject.FindGameObjectWithTag("Slot3").GetComponent<Image>().sprite;
+            
+            Hand.GetComponent<SpriteRenderer>().sprite = picture;
+            
+            
+            Item.transform.localPosition = new Vector3(-8e-05f, 0.00083f, 0.00252f);
+            Item.transform.localEulerAngles = new Vector3(10.164f,82.793f, 316.7f);
+            Item.transform.localScale = new Vector3(0.001778063f, 0.001778063f, 0.001778063f);
         }
         else if (key.Equals(KeyCode.Alpha4))
         {
             mode = Mode.Ernten;
+            Sprite picture =  GameObject.FindGameObjectWithTag("Slot4").GetComponent<Image>().sprite;
+            
+            Hand.GetComponent<SpriteRenderer>().sprite = picture;
+            
+            Item.transform.localPosition = new Vector3(0.000300000014f,0.00236999989f,0.00173999998f);
+            Item.transform.localEulerAngles = new Vector3(10.1638374f,82.7932434f,133.340912f);
+            Item.transform.localScale = new Vector3(0.00103073695f,0.00103073695f,0.00103073695f);
+            
+            
         }
         else if (key.Equals(KeyCode.Alpha5))
         {
             mode = Mode.Buddeln;
+            Sprite picture =  GameObject.FindGameObjectWithTag("Slot5").GetComponent<Image>().sprite;
+            
+            Hand.GetComponent<SpriteRenderer>().sprite = picture;
+            
+            Item.transform.localPosition = new Vector3(-9e-05f, 0.00048f, 0.00212f);
+            Item.transform.localEulerAngles = new Vector3(10.164f,82.793f, 133.341f);
+            Item.transform.localScale = new Vector3(0.004096563f, 0.004096563f, 0.004096563f);
         }
     }
 
