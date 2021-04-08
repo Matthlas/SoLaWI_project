@@ -54,12 +54,13 @@ public class ItemClickHandler : MonoBehaviour
 
     public void OnItemClicked()
     {
+        //Texture picture = ((UnityEngine.UIElements.Image)GameObject.FindGameObjectWithTag("Slot1").GetComponent<UnityEngine.UIElements.Image>()).image;
         GameObject.Find("Player").GetComponent<PlayerControllerAdapted>().setMode(_Key);
         
-        //attach clicked object to player hand
-        ItemDragHandler dragHandler =
-            gameObject.transform.Find("ItemImage").GetComponent<ItemDragHandler>();
-        //IInverntoryItem item = dragHandler.item;
+        
+        
+        
+        
         //_Inventory.UseItem(item);
         /*InventoryItemBase item = AttachedItem;
 
