@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Plant : MonoBehaviour
+public class Plant : MonoBehaviour
 {
 
     //basic parameters
@@ -31,7 +31,7 @@ public abstract class Plant : MonoBehaviour
     void Start()
     {
         StartCoroutine(checkIfDead());
-        Debug.Log("yip");
+        Debug.Log("yi");
         //InvokeRepeating("Grow", growthTickRate, growthTickRate);
         // There is also "Cancel Invoke" might be helpful. But changing the growing condition is already enough I think. Could also be replaced by a coroutine
     }
@@ -79,8 +79,7 @@ public abstract class Plant : MonoBehaviour
         this.transform.localScale += (GrowthRate * _growingDirection);
     }
 
-
-    public abstract void Transform();
+    
 
 
 
