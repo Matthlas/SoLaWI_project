@@ -431,7 +431,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     private void movePlayer()
     
-    {
+    {/*
         //Randbedingungen
         //z-Achse
         if (transform.localPosition.z > 34.571f)
@@ -466,6 +466,7 @@ public class PlayerControllerAdapted : MonoBehaviour
         {
             transform.localPosition = new Vector3(transform.localPosition.x, 0f, transform.localPosition.z);
         }
+        */
         
         
         

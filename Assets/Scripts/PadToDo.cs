@@ -9,6 +9,7 @@ randbedingungen & z !< 0                                    1
 pflanzen verschöenern                                       1
 verschiedene pflanzen in logic                              2
 verscheidene pflanzen im inventar zugänglich machen         2
+remove vacant spaces in inventory                           2
 CameraMovement Debuggen (auch weniger sensitiv?)            3
 erntezähler                                                 3
 challenges einrichten                                       3
