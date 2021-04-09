@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1814104878716744611}
   - component: {fileID: 264832454830756070}
   - component: {fileID: 1552221846865693554}
+  - component: {fileID: -7924302600520582243}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Seed
@@ -96,3 +97,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &-7924302600520582243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3638427549206609116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346978f5a75e04d1eb0dc41f3ffa973b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstructiveWeeds: 0
+  growingCondition: 1
+  readyToHarvest: 0
+  maxSize: 6
+  GrowthRate: 2
+  size: 0
