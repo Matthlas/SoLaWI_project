@@ -7,8 +7,14 @@ i für instructions                                          1       done
 randbedingungen & z !< 0                                    1       done
 animation player wieder hinzufügen                          1
 pflanzen verschöenern                                       1
-verschiedene pflanzen in logic                              2
-verscheidene pflanzen im inventar zugänglich machen         2
+verschiedene pflanzen in logic                              2       done
+        Use SeedListener to add vegetables, use Plant.Transform() to add growing states 
+        (switch (vegetable)
+            if size == 1 : change zylinder to vegetable)
+                            +transform
+            if size == 2: transform
+            if size == 3: transform
+In Inventory über Seedlistener Saattütenimages ändern       2
 remove vacant spaces in inventory                           2       done
 CameraMovement Debuggen (auch weniger sensitiv?)            3
 erntezähler                                                 3

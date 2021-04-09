@@ -89,6 +89,12 @@ public class Plant : MonoBehaviour
         switch (kindOfPlant)
         {
             case SeedListener.PlantSeeds.Carrot:
+                /*
+                 *  if size == 1: change zylinder to vegetable GameObject)
+                                 +transform
+                    if size == 2: transform
+                    if size == 3: transform
+                 */
                 this.transform.localScale += (GrowthRate * _growingDirection);
                 break;
             default:

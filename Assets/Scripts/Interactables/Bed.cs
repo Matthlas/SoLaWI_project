@@ -70,27 +70,10 @@ public class Bed : InteractableItemBaseClass {
     {
         if (bedMode == BedFSM.plain){   
             Weeding();
-
-            SeedListener.PlantSeeds plantMode = SeedListener.getCurrentPlant();
-            switch (plantMode)
-            {
-                case SeedListener.PlantSeeds.Carrot :
-                    _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                        this.transform);
-                    break;
-                case SeedListener.PlantSeeds.Cucumber :
-                    _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                        this.transform);
-                    break;
-                case SeedListener.PlantSeeds.Tomato :
-                    _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                        this.transform);
-                    break;
-                default: 
-                    _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                        this.transform);
-                    break;
-            }
+            
+            
+            _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
+                this.transform);
 
 
             if (watered)
