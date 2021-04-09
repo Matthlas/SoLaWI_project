@@ -5,7 +5,7 @@ game logic refinen                                          1       done
 ernten debuggen  only if ready to harvest                   1       done
 i für instructions                                          1       done
 randbedingungen & z !< 0                                    1       done
-animation player wieder hinzufügen                          1
+animation player wieder hinzufügen (ohne jump)              1       done
 pflanzen verschöenern                                       1
 verschiedene pflanzen in logic                              2       done
         Use SeedListener to add vegetables, use Plant.Transform() to add growing states 

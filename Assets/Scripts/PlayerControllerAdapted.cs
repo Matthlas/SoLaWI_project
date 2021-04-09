@@ -431,45 +431,7 @@ public class PlayerControllerAdapted : MonoBehaviour
 
     private void movePlayer()
     
-    {/*
-        //Randbedingungen
-        //z-Achse
-        if (transform.localPosition.z > 34.571f)
-        {
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 34.571f);
-        } else if (transform.localPosition.z < -47f)
-        {
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -47.43f);
-        }
-        //x-Achse
-        if (transform.localPosition.x > 20.1f)
-        {
-            if (transform.localPosition.x > 31.245f)
-            {
-                transform.localPosition = new Vector3(31.245f, transform.localPosition.y, transform.localPosition.z);
-            }
-            else if (transform.localPosition.z > -24.46f)
-            {
-                //ist nicht an der Grenze
-            }
-            else
-            {
-                transform.localPosition = new Vector3(20.1f, transform.localPosition.y, transform.localPosition.z);
-            }
-        } else if (transform.localPosition.x < -28.94f)
-        {
-            transform.localPosition = new Vector3(-28.94f, transform.localPosition.y, transform.localPosition.z);
-        }
-        
-        //y-Achse
-        if (gameObject.transform.localPosition.y < 0f)
-        {
-            transform.localPosition = new Vector3(transform.localPosition.x, 0f, transform.localPosition.z);
-        }
-        */
-        
-        
-        
+    {
         // Get Input for axis
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -495,17 +457,17 @@ public class PlayerControllerAdapted : MonoBehaviour
 
             _moveDirection *= Speed;
 
-            if (Input.GetButton("Jump"))
+            /*if (Input.GetButton("Jump"))
             {
                 _animator.SetBool("is_in_air", true);
                 _moveDirection.y = JumpSpeed;
 
             }
             else
-            {
-                _animator.SetBool("is_in_air", false);
+            {*/
+               // _animator.SetBool("is_in_air", false);
                 _animator.SetBool("run", move.magnitude > 0);
-            }
+            //}
         }
         else
         {
