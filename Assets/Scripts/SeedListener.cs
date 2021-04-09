@@ -10,9 +10,9 @@ public class SeedListener : MonoBehaviour
     
     public enum PlantSeeds
     {
-        Carrot,
-        Cucumber,
-        Tomato
+        Cabbage,
+        Tomato,
+        Beet
     }
 
     private PlantSeeds[] plants;
@@ -23,9 +23,9 @@ public class SeedListener : MonoBehaviour
     private void Start()
     {
         plants = new PlantSeeds[3];
-        plants[0] = PlantSeeds.Carrot;
-        plants[1] = PlantSeeds.Cucumber;
-        plants[2] = PlantSeeds.Tomato;
+        plants[0] = PlantSeeds.Cabbage;
+        plants[1] = PlantSeeds.Tomato;
+        plants[2] = PlantSeeds.Beet;
         currentPlant = plants[0];
     }
 
