@@ -40,12 +40,13 @@ public class Instructions : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10);
-            this.gameObject.GetComponent<TextMeshPro>().enabled = false;
-            instructionButtonShown = false;
-            yield return new WaitForSeconds(120);
-            this.gameObject.GetComponent<TextMeshPro>().enabled = true;
+            yield return new WaitForSeconds(30);
+            this.gameObject.GetComponent<TextMeshProUGUI>().enabled = true;
             instructionButtonShown = true;
+            yield return new WaitForSeconds(10);
+            this.gameObject.GetComponent<TextMeshProUGUI>().enabled = false;
+            instructionButtonShown = false;
+            yield return new WaitForSeconds(240);
         }
     }
 }
