@@ -70,7 +70,28 @@ public class Bed : InteractableItemBaseClass {
     {
         if (bedMode == BedFSM.plain){   
             Weeding();
+
+            SeedListener.PlantSeeds plantMode = SeedListener.getCurrentPlant();
+            switch (plantMode)
+            {
+                case SeedListener.PlantSeeds.Carrot :
+                    _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
+                        this.transform);
+                    break;
+                case SeedListener.PlantSeeds.Cucumber :
+                    _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+                    break;
+                case SeedListener.PlantSeeds.Tomato :
+                    _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+                    break;
+                default: 
+                    _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+                    break;
+            }
+            
             _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity, this.transform);
+           
+            
             if (watered)
             {
                 _myPlant.Grow();
@@ -96,6 +117,11 @@ public class Bed : InteractableItemBaseClass {
             if (_myPlant != null)
             {
                 _myPlant.Grow();
+                
+                if (_myPlant.readyToHarvest)
+                {
+                    _interactionCue.Play();
+                }
             
             }
             else
@@ -153,7 +179,6 @@ public class Bed : InteractableItemBaseClass {
             Destroy(_myPlant.gameObject);
             if (_myPlant.readyToHarvest)
             {
-                _interactionCue.Play();
                 //Score erhöhen für die Art der Pflanze
             }
         }

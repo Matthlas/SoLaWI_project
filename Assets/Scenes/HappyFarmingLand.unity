@@ -1763,8 +1763,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<b>Instructions: </b>\nPress 1 - 5 to change mode: 1 - Plant \xB7 2 -
-    Water \xB7 3 - Weed \xB7 4 - Harvest \xB7 5 - Dig\nLeft Click to interact\nDon't
-    harvest too early!"
+    Water \xB7 3 - Weed \xB7 4 - Harvest \xB7 5 - Dig\nPress C to change seed\nLeft
+    Click to interact\nDon't harvest too early!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2965,6 +2965,19 @@ CapsuleCollider:
   m_Height: 2.45
   m_Direction: 1
   m_Center: {x: 0, y: 0.76, z: 0.68}
+--- !u!114 &573971437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573971435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06db9022123833adba4810ea0182e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 0
 --- !u!4 &573971441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4081584095433592, guid: fbc08fd83daf78c4483cae67db92c0e7, type: 3}

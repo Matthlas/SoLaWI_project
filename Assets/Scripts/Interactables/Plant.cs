@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : MonoBehaviour
+public abstract class Plant : MonoBehaviour
 {
 
     //basic parameters
@@ -19,6 +19,8 @@ public class Plant : MonoBehaviour
     [SerializeField] public float maxSize = 6f;
     [SerializeField] public float GrowthRate = 2f;
 
+    public float size = 0f;
+
     private Vector3 _growingDirection = new Vector3(0, 1, 0);
     //private float currentGrowthRate;
     //private float growthTickRate = 2f;
@@ -29,6 +31,7 @@ public class Plant : MonoBehaviour
     void Start()
     {
         StartCoroutine(checkIfDead());
+        Debug.Log("yip");
         //InvokeRepeating("Grow", growthTickRate, growthTickRate);
         // There is also "Cancel Invoke" might be helpful. But changing the growing condition is already enough I think. Could also be replaced by a coroutine
     }
@@ -77,17 +80,17 @@ public class Plant : MonoBehaviour
     }
 
 
+    public abstract void Transform();
 
 
 
-    
-    
-   /* public void Dry()
-    {
-        watered = false;
-    }*/
+
+    /* public void Dry()
+     {
+         watered = false;
+     }*/
 
 
-    
+
 }
 

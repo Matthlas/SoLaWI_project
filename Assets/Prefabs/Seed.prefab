@@ -126,10 +126,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3638427549206609116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 346978f5a75e04d1eb0dc41f3ffa973b, type: 3}
+  m_Script: {fileID: 11500000, guid: 741e3b279acb6665d99c1ab28093ff13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSize: 5
-  BaseGrowthRate: 0.5
+  obstructiveWeeds: 0
   growingCondition: 1
   readyToHarvest: 0
+  maxSize: 6
+  GrowthRate: 2
+  size: 0
