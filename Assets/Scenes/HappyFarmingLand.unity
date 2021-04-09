@@ -4244,6 +4244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed
       objectReference: {fileID: 0}
+    - target: {fileID: 958722014476425862, guid: 9d15ed3d28c27b941bbcea3f13f960f8, type: 3}
+      propertyPath: _plantPrefab
+      value: 
+      objectReference: {fileID: 3638427549206609116, guid: 740bf6f7584914f4a92e0ebb8b1b7162, type: 3}
     - target: {fileID: 958722014476425863, guid: 9d15ed3d28c27b941bbcea3f13f960f8, type: 3}
       propertyPath: m_RootOrder
       value: 2
