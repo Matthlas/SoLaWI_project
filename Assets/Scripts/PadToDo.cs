@@ -7,6 +7,7 @@ In Inventory über Seedlistener Saattütenimages ändern       2
 CameraMovement Debuggen (auch weniger sensitiv?)            3
 erntezähler                                                 3
 challenges einrichten                                       3
+einzelnes Beet entfernen                                    3 
 wenn schaufel -> neues beet anlegen                         4
        Idee dazu: inaktive grüne Beetreihen die sich auch so heben, als könnte man mit denen
        interagieren. Wenn Dig() dann werden die aktiv. Wenn man überall Beete erstellen kann
@@ -36,6 +37,6 @@ verschiedene pflanzen in logic                              2       done
             if size == 2: transform
             if size == 3: transform
 remove vacant spaces in inventory                           2       done
-einzelnes Beet entfernen                                    3       done
+
 
 */

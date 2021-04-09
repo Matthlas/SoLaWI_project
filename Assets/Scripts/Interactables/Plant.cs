@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Plant : MonoBehaviour
@@ -18,6 +19,8 @@ public class Plant : MonoBehaviour
     //plant specific parameters
     [SerializeField] public float maxSize = 3f;
     [SerializeField] public float GrowthRate = 2f;
+    [SerializeField] public GameObject[] plants = new GameObject[3];
+    private GameObject plant;
 
     public float size = 0f;
     private SeedListener.PlantSeeds kindOfPlant;
@@ -80,6 +83,7 @@ public class Plant : MonoBehaviour
 
         if (!growingCondition) return;
         //if (this.transform.localScale.y <= ((maxSize / needed_care) * care)) // n deckel aufs wachsen draufpacken, wenn nicht genug care raufpacken
+        size++;
         Transform();
     }
 
@@ -88,32 +92,59 @@ public class Plant : MonoBehaviour
     {
         switch (kindOfPlant)
         {
-            case SeedListener.PlantSeeds.Cabbage:
-                /*
-                 *  if size == 1: change zylinder to vegetable GameObject)
-                                 +transform
-                    if size == 2: transform
-                    if size == 3: transform
-                 */
-                this.transform.localScale += (GrowthRate * _growingDirection);
+            case SeedListener.PlantSeeds.Beet:
+                if (size == 1)
+                {
+                    this.gameObject.GetComponent<MeshFilter>().mesh = null;
+                    
+                    plant = Instantiate(plants[0], transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
+                        this.transform);
+                    
+                    //transform
+                    plant.transform.localScale = new Vector3(10f, 10f, 10f);
+                } else if (size == 2)
+                {
+                    plant.transform.localScale = new Vector3(15f, 15f, 15f);
+                } else if (size == 3)
+                {
+                    plant.transform.localScale = new Vector3(20f, 20f, 20f);
+                }
                 break;
             case SeedListener.PlantSeeds.Tomato:
-                /*
-                 *  if size == 1: change zylinder to vegetable GameObject)
-                                 +transform
-                    if size == 2: transform
-                    if size == 3: transform
-                 */
-                this.transform.localScale += (GrowthRate * _growingDirection);
+                if (size == 1)
+                {
+                    this.gameObject.GetComponent<MeshFilter>().mesh = null;
+                    
+                    plant = Instantiate(plants[1], transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
+                        this.transform);
+                    //transform
+                    //transform
+                    plant.transform.localScale = new Vector3(10f, 10f, 10f);
+                } else if (size == 2)
+                {
+                    plant.transform.localScale = new Vector3(15f, 15f, 15f);
+                } else if (size == 3)
+                {
+                    plant.transform.localScale = new Vector3(20f, 20f, 20f);
+                }
                 break;
-            case SeedListener.PlantSeeds.Beet:
-                /*
-                 *  if size == 1: change zylinder to vegetable GameObject)
-                                 +transform
-                    if size == 2: transform
-                    if size == 3: transform
-                 */
-                this.transform.localScale += (GrowthRate * _growingDirection);
+            case SeedListener.PlantSeeds.Cabbage:
+                if (size == 1)
+                {
+                    this.gameObject.GetComponent<MeshFilter>().mesh = null;
+                    
+                    plant = Instantiate(plants[2], transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
+                        this.transform);
+                    //transform
+                    //transform
+                    plant.transform.localScale = new Vector3(10f, 10f, 10f);
+                } else if (size == 2)
+                {
+                    plant.transform.localScale = new Vector3(15f, 15f, 15f);
+                } else if (size == 3)
+                {
+                    plant.transform.localScale = new Vector3(20f, 20f, 20f);
+                }
                 break;
             default:
                 this.transform.localScale += (GrowthRate * _growingDirection);

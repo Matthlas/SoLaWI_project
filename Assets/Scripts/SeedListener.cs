@@ -15,7 +15,7 @@ public class SeedListener : MonoBehaviour
         Beet
     }
 
-    private PlantSeeds[] plants;
+    private PlantSeeds[] plants = new PlantSeeds[3];
 
     private int plantMode = 0;
     private static PlantSeeds currentPlant;
@@ -23,9 +23,9 @@ public class SeedListener : MonoBehaviour
     private void Start()
     {
         plants = new PlantSeeds[3];
-        plants[0] = PlantSeeds.Cabbage;
+        plants[0] = PlantSeeds.Beet;
         plants[1] = PlantSeeds.Tomato;
-        plants[2] = PlantSeeds.Beet;
+        plants[2] = PlantSeeds.Cabbage;
         currentPlant = plants[0];
     }
 
@@ -33,13 +33,14 @@ public class SeedListener : MonoBehaviour
     {
         if(Input.GetKeyDown(_key))
         {
-            if (plantMode == plants.Length)
+            if (plantMode == plants.Length-1)
             {
                 plantMode = 0;
+
             }
             else
             {
-                plantMode++;
+                ++plantMode;
             }
 
             currentPlant = plants[plantMode];
@@ -53,4 +54,5 @@ public class SeedListener : MonoBehaviour
     {
         return currentPlant;
     }
+    
 }

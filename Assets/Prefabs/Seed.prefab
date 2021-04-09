@@ -132,6 +132,10 @@ MonoBehaviour:
   obstructiveWeeds: 0
   growingCondition: 1
   readyToHarvest: 0
-  maxSize: 6
+  maxSize: 3
   GrowthRate: 2
+  plants:
+  - {fileID: 1616580530717364, guid: 081319ef3e436a44295662d8fa47dd02, type: 3}
+  - {fileID: 2906742830765859135, guid: 78da2ace1ab76ce478600ebe37fa10fe, type: 3}
+  - {fileID: 8554979865545778643, guid: aec8969d0290c6d4cbc587ef85a01ce4, type: 3}
   size: 0
