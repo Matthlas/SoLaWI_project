@@ -10,7 +10,7 @@ public class Bed : InteractableItemBaseClass {
 
     
     [SerializeField]
-    private GameObject _plantPrefab;
+    public Plant _plantPrefab;
     private Plant _myPlant;
 
     [SerializeField] private GameObject _weedPrefab;
@@ -80,22 +80,19 @@ public class Bed : InteractableItemBaseClass {
                     break;
                 case SeedListener.PlantSeeds.Cucumber :
                     _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                        this.transform).GetComponent<Plant>();
+                        this.transform);
                     break;
                 case SeedListener.PlantSeeds.Tomato :
                     _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                        this.transform).GetComponent<Plant>();
+                        this.transform);
                     break;
                 default: 
                     _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                        this.transform).GetComponent<Plant>();
+                        this.transform);
                     break;
             }
-            
-            _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                this.transform).GetComponent<Plant>();
-           
-            
+
+
             if (watered)
             {
                 _myPlant.Grow();

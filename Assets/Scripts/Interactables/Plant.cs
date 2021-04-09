@@ -16,10 +16,11 @@ public class Plant : MonoBehaviour
 
 
     //plant specific parameters
-    [SerializeField] public float maxSize = 6f;
+    [SerializeField] public float maxSize = 3f;
     [SerializeField] public float GrowthRate = 2f;
 
     public float size = 0f;
+    private SeedListener.PlantSeeds kindOfPlant;
 
     private Vector3 _growingDirection = new Vector3(0, 1, 0);
     //private float currentGrowthRate;
@@ -31,7 +32,7 @@ public class Plant : MonoBehaviour
     void Start()
     {
         StartCoroutine(checkIfDead());
-        Debug.Log("yi");
+        kindOfPlant = SeedListener.getCurrentPlant();
         //InvokeRepeating("Grow", growthTickRate, growthTickRate);
         // There is also "Cancel Invoke" might be helpful. But changing the growing condition is already enough I think. Could also be replaced by a coroutine
     }
@@ -53,13 +54,6 @@ public class Plant : MonoBehaviour
 
     public void Grow()
     {
-
-        //Only grow until max size
-        if (this.transform.localScale.y >= maxSize)
-        {
-            readyToHarvest = true;
-        }
-
         //Weeds influence plant growth
         if (obstructiveWeeds >= 4)
         {
@@ -68,18 +62,41 @@ public class Plant : MonoBehaviour
         }
         else
         {
-            growingCondition = true;
+            if (size >= maxSize)
+            {
+                readyToHarvest = true;
+                growingCondition = false;
+            }
+            else
+            {
+                growingCondition = true;
+            }
+            
             this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0f);
         }
-        
+
+
+
 
         if (!growingCondition) return;
         //if (this.transform.localScale.y <= ((maxSize / needed_care) * care)) // n deckel aufs wachsen draufpacken, wenn nicht genug care raufpacken
-
-        this.transform.localScale += (GrowthRate * _growingDirection);
+        Transform();
     }
 
-    
+    //TODO: Transform depending on kind of Vegetable
+    private void Transform()
+    {
+        switch (kindOfPlant)
+        {
+            case SeedListener.PlantSeeds.Carrot:
+                this.transform.localScale += (GrowthRate * _growingDirection);
+                break;
+            default:
+                this.transform.localScale += (GrowthRate * _growingDirection);
+                break;
+        }
+        
+    }
 
 
 
