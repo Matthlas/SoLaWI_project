@@ -4,12 +4,12 @@
 game logic refinen                                          1       done
 ernten debuggen  only if ready to harvest                   1       done
 i für instructions                                          1       done
+randbedingungen & z !< 0                                    1       done
 animation player wieder hinzufügen                          1
-randbedingungen & z !< 0                                    1
 pflanzen verschöenern                                       1
 verschiedene pflanzen in logic                              2
 verscheidene pflanzen im inventar zugänglich machen         2
-remove vacant spaces in inventory                           2
+remove vacant spaces in inventory                           2       done
 CameraMovement Debuggen (auch weniger sensitiv?)            3
 erntezähler                                                 3
 challenges einrichten                                       3
