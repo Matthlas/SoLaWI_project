@@ -1762,7 +1762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Instructions: </b>\nPress 1 - 4 to change mode: 1 - Plant \xB7 2 -
+  m_text: "<b>Instructions: </b>\nPress 1 - 5 to change mode: 1 - Plant \xB7 2 -
     Water \xB7 3 - Weed \xB7 4 - Harvest \xB7 5 - Dig\nLeft Click to interact\nDon't
     harvest too early!"
   m_isRightToLeft: 0
@@ -5133,7 +5133,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.12331069, y: -4.3644816e-10, z: 5.4232622e-11, w: 0.99236816}
+  m_LocalRotation: {x: 0.12331069, y: 0.0000000079494775, z: -9.877942e-10, w: 0.99236816}
   m_LocalPosition: {x: -9.71, y: 4.147084, z: -13.9453335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6244,7 +6244,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124425174}
-  m_LocalRotation: {x: 0.10745213, y: -0.000000017106764, z: 0.0000000018488627, w: 0.9942103}
+  m_LocalRotation: {x: 0.10745213, y: 0.000000017106757, z: -0.0000000018488621, w: 0.9942103}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6529,7 +6529,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153437927}
-  m_LocalRotation: {x: 0.14349586, y: -0.000000003911901, z: 5.672121e-10, w: 0.9896509}
+  m_LocalRotation: {x: 0.14349589, y: 0.000000025840295, z: -0.000000003746751, w: 0.98965096}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
