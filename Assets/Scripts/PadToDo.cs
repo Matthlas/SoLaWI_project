@@ -11,6 +11,7 @@ wenn schaufel -> neues beet anlegen                         4
        Idee dazu: inaktive grüne Beetreihen die sich auch so heben, als könnte man mit denen
        interagieren. Wenn Dig() dann werden die aktiv. Wenn man überall Beete erstellen kann
        wird es so unübersichtlich...
+aufräumen (v.a. 3rd Party unused löschen)                   4
 gießanimation                                               4
 giatrrenmusik (und gitarre in Hand nehmen)                  4 (5)
 make day and night slowlier                                 5
