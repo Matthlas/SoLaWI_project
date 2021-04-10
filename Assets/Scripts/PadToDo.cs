@@ -14,7 +14,8 @@ wenn schaufel -> neues beet anlegen                         4
        wird es so unübersichtlich...
 aufräumen (v.a. 3rd Party unused löschen)                   4
 gießanimation                                               4
-giatrrenmusik (und gitarre in Hand nehmen)                  4 (5)
+gitarre in Hand nehmen                                      5
+Feuerknistern                                               5
 make day and night slowlier                                 5
 waldimage an rändern einfügen?                              5
 
@@ -37,6 +38,7 @@ verschiedene pflanzen in logic                              2       done
             if size == 2: transform
             if size == 3: transform
 remove vacant spaces in inventory                           2       done
+gitarrenmusik                                               4       done
 
 
 */
