@@ -114,7 +114,11 @@ MonoBehaviour:
   InteractText: Left click to interact with item
   ItemType: 0
   _interactionCue: {fileID: 8316701143637202629}
-  _plantPrefab: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+  _myPlant: {fileID: 0}
+  plantprefabs:
+  - {fileID: -5987405078209597224, guid: 081319ef3e436a44295662d8fa47dd02, type: 3}
+  - {fileID: 2557484079638273125, guid: 78da2ace1ab76ce478600ebe37fa10fe, type: 3}
+  - {fileID: 4291954471443803549, guid: aec8969d0290c6d4cbc587ef85a01ce4, type: 3}
   _weedPrefab: {fileID: 100000, guid: ba9003367410cc047bdcb941db473a1c, type: 3}
 --- !u!1001 &958722015279188004
 PrefabInstance:

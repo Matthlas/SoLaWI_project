@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33177885074901082}
   - component: {fileID: 23708313125399864}
   - component: {fileID: 136234432525851580}
+  - component: {fileID: -1659716112131972285}
   m_Layer: 0
   m_Name: Radish
   m_TagString: Untagged
@@ -96,3 +97,21 @@ CapsuleCollider:
   m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!114 &-1659716112131972285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223911998612176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346978f5a75e04d1eb0dc41f3ffa973b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstructiveWeeds: 0
+  growingCondition: 1
+  readyToHarvest: 0
+  maxSize: 3
+  GrowthRate: 2
+  size: 0

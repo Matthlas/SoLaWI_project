@@ -10,16 +10,19 @@ public class Bed : InteractableItemBaseClass {
 
     
     [SerializeField]
-    public Plant _plantPrefab;
+    //public Plant _plantPrefab;
     private Plant _myPlant;
+    //public GameObject _myPlant;
+    [SerializeField] public Plant[] plantprefabs = new Plant[3]; //different kinds of plants
 
+    //weeding variables
     [SerializeField] private GameObject _weedPrefab;
     private float weedSpanRate = 10f;
     private GameObject newWeed;
     private List<GameObject> weedList = new List<GameObject>();
 
     private bool watered = false;
-
+    private SeedListener.PlantSeeds kindOfPlant;
     //finite state machine for plant
     private enum BedFSM
     {
@@ -71,14 +74,36 @@ public class Bed : InteractableItemBaseClass {
         if (bedMode == BedFSM.plain){   
             Weeding();
             
-            
-            _myPlant = Instantiate(_plantPrefab, transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
-                this.transform);
+            kindOfPlant = SeedListener.getCurrentPlant();
 
+            switch (kindOfPlant)
+            {
+                case SeedListener.PlantSeeds.Beet:
+                    _myPlant = Instantiate(plantprefabs[0], transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
+                        this.transform);
+                    _myPlant.transform.localScale = new Vector3(1f, 1f, 1f);
+                    break;
+            
+                case SeedListener.PlantSeeds.Tomato:
+                    _myPlant = Instantiate(plantprefabs[1], transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
+                        this.transform);
+                    _myPlant.transform.localScale = new Vector3(1f, 1f, 1f);
+                    break;
+                
+                case SeedListener.PlantSeeds.Cabbage:
+                    _myPlant = Instantiate(plantprefabs[2], transform.position + new Vector3(0, 0.1f, 0), Quaternion.identity,
+                        this.transform);
+                    _myPlant.transform.localScale = new Vector3(1f, 1f, 1f);
+                    break;
+                
+            }
+            _myPlant.begin(kindOfPlant);
+    
 
             if (watered)
             {
                 _myPlant.Grow();
+                Debug.Log("tries to grow");
             }
 
         }
@@ -102,11 +127,12 @@ public class Bed : InteractableItemBaseClass {
             {
                 _myPlant.Grow();
                 
-                if (_myPlant.readyToHarvest)
-                {
-                    _interactionCue.Play();
-                }
-            
+               // if (_myPlant.readyToHarvest)
+               // {
+                 //   _interactionCue.Play();
+                //}
+                _interactionCue.Play();
+                
             }
             else
             {
@@ -160,11 +186,13 @@ public class Bed : InteractableItemBaseClass {
     {
         if (_myPlant != null)
         {
-            Destroy(_myPlant.gameObject);
+            
             if (_myPlant.readyToHarvest)
             {
-                //Score erhöhen für die Art der Pflanze
+                //ScoreboardHandler.newScore(_myPlant.getKind(), 1);
+                Debug.Log("increase score");
             }
+            Destroy(_myPlant.gameObject);
         }
         bedMode = BedFSM.plain;
         

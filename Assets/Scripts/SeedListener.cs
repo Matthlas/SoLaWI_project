@@ -16,8 +16,10 @@ public class SeedListener : MonoBehaviour
     }
 
     private PlantSeeds[] plants = new PlantSeeds[3];
-
+    
+    //index of plant
     private int plantMode = 0;
+    
     private static PlantSeeds currentPlant;
 
     private void Start()
@@ -33,6 +35,7 @@ public class SeedListener : MonoBehaviour
     {
         if(Input.GetKeyDown(_key))
         {
+            //skip back to first plant after last
             if (plantMode == plants.Length-1)
             {
                 plantMode = 0;

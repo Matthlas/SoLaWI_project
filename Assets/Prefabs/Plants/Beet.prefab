@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33649283181226336}
   - component: {fileID: 23944550476075074}
   - component: {fileID: 136003572135623424}
+  - component: {fileID: -5987405078209597224}
   m_Layer: 0
   m_Name: Beet
   m_TagString: Untagged
@@ -96,3 +97,21 @@ CapsuleCollider:
   m_Height: 0.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &-5987405078209597224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616580530717364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346978f5a75e04d1eb0dc41f3ffa973b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstructiveWeeds: 0
+  growingCondition: 1
+  readyToHarvest: 0
+  maxSize: 3
+  GrowthRate: 10
+  size: 0
