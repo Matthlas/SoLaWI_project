@@ -5,7 +5,7 @@
 pflanzen verschöenern                                       1
 In Inventory über Seedlistener Saattütenimages ändern       2
 CameraMovement Debuggen (auch weniger sensitiv?)            3
-erntezähler                                                 3
+
 challenges einrichten                                       3
 einzelnes Beet entfernen                                    3 
 wenn schaufel -> neues beet anlegen                         4
@@ -38,6 +38,7 @@ verschiedene pflanzen in logic                              2       done
             if size == 2: transform
             if size == 3: transform
 remove vacant spaces in inventory                           2       done
+erntezähler                                                 3       done
 gitarrenmusik                                               4       done
 
 
