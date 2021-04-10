@@ -4273,97 +4273,193 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 195076204502794028, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 195076204502794028, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 297315129908671129, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 297315129908671129, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 483084756394254229, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 483084756394254229, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 608429896227574506, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 608429896227574506, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 838320491126769413, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 838320491126769413, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 907142731094304873, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 907142731094304873, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 1071393563366287073, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071393563366287073, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 1270581624365999984, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 1270581624365999984, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 1346405185535374008, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346405185535374008, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 1404194931947489040, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 1404194931947489040, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 1483145432498110061, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483145432498110061, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 1616281863024237077, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 1616281863024237077, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 1850180773097290358, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850180773097290358, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 2032582099556690393, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 2032582099556690393, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 2222639229499118466, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222639229499118466, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 2335384021383919456, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 2335384021383919456, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 2385282225307658240, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 2385282225307658240, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 2448617301175944438, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 2448617301175944438, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 2528110504234142751, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528110504234142751, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 2575015309375669044, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 2575015309375669044, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 2650616141556664351, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650616141556664351, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 2692421364766606760, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 2692421364766606760, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 2914523028859886928, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914523028859886928, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 3047330245100395082, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 3047330245100395082, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
@@ -4373,49 +4469,97 @@ PrefabInstance:
       value: BedBlock
       objectReference: {fileID: 0}
     - target: {fileID: 3385185574322914902, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385185574322914902, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 3534167759841182186, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 3534167759841182186, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 3603670850724173296, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 3603670850724173296, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 3660390888213882817, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 3660390888213882817, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 3724275492552773377, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724275492552773377, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 3728523245752677669, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 3728523245752677669, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 4251196097096721279, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251196097096721279, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 4423729063191932939, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 4423729063191932939, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 4433881684384762885, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433881684384762885, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 4539250542703411632, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 4539250542703411632, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 4849351648070367540, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849351648070367540, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 5300703274965943321, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 5300703274965943321, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
@@ -4465,97 +4609,193 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5925667707161105694, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 5925667707161105694, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 6001905418329749745, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 6001905418329749745, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 6230839870366874465, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230839870366874465, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 6432374804865721353, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 6432374804865721353, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 6465783228866141888, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465783228866141888, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 6486306740539329014, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 6486306740539329014, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 6895964500397742372, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895964500397742372, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 7208713949136700427, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 7208713949136700427, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 7213073151971288980, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213073151971288980, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 7608223839180040927, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 7608223839180040927, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 7703227071926654338, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703227071926654338, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 7785818963761434932, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 7785818963761434932, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 7812785221080448434, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812785221080448434, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 7903830840798225332, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 7903830840798225332, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 7982495978381652078, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982495978381652078, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 8012461765831671715, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 8012461765831671715, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 8202102347404355291, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202102347404355291, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 8373270463921926605, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 8373270463921926605, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 8493947579271153602, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493947579271153602, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 8558811385043594453, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 8558811385043594453, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 8570521438917442146, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570521438917442146, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 8618259384954768499, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 8618259384954768499, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
     - target: {fileID: 8707479562688435136, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707479562688435136, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
       objectReference: {fileID: -1829023032715222439, guid: 8664426138227486da5dc2247092f4a4, type: 3}
+    - target: {fileID: 8968467342570083672, guid: 347301b968b551a46bf2585427c05d72, type: 3}
+      propertyPath: InteractText
+      value: Left click to interact with item
+      objectReference: {fileID: 0}
     - target: {fileID: 8968467342570083672, guid: 347301b968b551a46bf2585427c05d72, type: 3}
       propertyPath: _plantPrefab
       value: 
@@ -5878,7 +6118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Right click to interact with item
+  InteractText: Left click to interact with item
   ItemType: 0
   _interactionCue: {fileID: 0}
   audio1: {fileID: 8300000, guid: b7865c820ef36d0b5b928401e479c835, type: 3}

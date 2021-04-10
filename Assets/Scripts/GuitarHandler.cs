@@ -35,8 +35,7 @@ public class GuitarHandler : InteractableItemBaseClass
 
             whichAudio = !whichAudio;
             isPlaying = true;
-
-
+            StartCoroutine(waitTilEnd());
         }
         else
         {
@@ -45,6 +44,11 @@ public class GuitarHandler : InteractableItemBaseClass
 
         }
         
-        
+    }
+    public IEnumerator waitTilEnd()
+    {
+        yield return new WaitForSeconds(35);
+        isPlaying = false;
+
     }
 }
