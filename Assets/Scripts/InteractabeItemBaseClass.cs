@@ -18,7 +18,7 @@ public class InteractableItemBaseClass : MonoBehaviour
 
     public Sprite Image;
 
-    public string InteractText = "Right click to interact with item";
+    public string InteractText = "Left click to interact with item";
 
     public EnumItemType ItemType;
 
