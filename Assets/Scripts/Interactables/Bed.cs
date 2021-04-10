@@ -100,10 +100,10 @@ public class Bed : InteractableItemBaseClass {
             _myPlant.begin(kindOfPlant);
     
 
+            // if bed is wet and we plant something plant instantly grows
             if (watered)
             {
                 _myPlant.Grow();
-                Debug.Log("tries to grow");
             }
 
         }
@@ -127,11 +127,11 @@ public class Bed : InteractableItemBaseClass {
             {
                 _myPlant.Grow();
                 
-               // if (_myPlant.readyToHarvest)
-               // {
-                 //   _interactionCue.Play();
-                //}
-                _interactionCue.Play();
+                if (_myPlant.readyToHarvest)
+                    {
+                        _interactionCue.Play();
+                    }
+                
                 
             }
             else
@@ -169,7 +169,7 @@ public class Bed : InteractableItemBaseClass {
         {
             _myPlant.obstructiveWeeds = 0;
             //if first watered then weeded, check if now plant can grow
-            if (watered && !_myPlant.growingCondition)
+            if (watered && !_myPlant.growingCondition && (_myPlant.size < _myPlant.maxSize))
             {
                 _myPlant.Grow();
             }
@@ -189,8 +189,7 @@ public class Bed : InteractableItemBaseClass {
             
             if (_myPlant.readyToHarvest)
             {
-                //ScoreboardHandler.newScore(_myPlant.getKind(), 1);
-                Debug.Log("increase score");
+                ScoreboardHandler.newScore(_myPlant.getKind(), 1);
             }
             Destroy(_myPlant.gameObject);
         }

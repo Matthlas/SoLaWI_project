@@ -113,9 +113,5 @@ MonoBehaviour:
   growingCondition: 1
   readyToHarvest: 0
   maxSize: 3
-  GrowthRate: 2
-  plants:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  size: 0
+  GrowthRate: 1.5
+  size: 1
