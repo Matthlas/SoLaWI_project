@@ -410,7 +410,7 @@ public class PlayerControllerAdapted : MonoBehaviour
         {
             if (item.CanInteract(other))
             {
-                Hud.OpenMessagePanel(item);
+               // Hud.OpenMessagePanel(item);
                 item.Select();
                 InteractItemsList.Add(item);
                 
@@ -423,7 +423,7 @@ public class PlayerControllerAdapted : MonoBehaviour
         InteractableItemBaseClass item = other.GetComponent<InteractableItemBaseClass>();
         if (item != null)
         {
-            Hud.CloseMessagePanel();
+            //Hud.CloseMessagePanel();
             InteractItemsList.Remove(item);
             item.Unselect();
         }

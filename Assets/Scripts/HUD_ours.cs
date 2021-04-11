@@ -7,7 +7,7 @@ public class HUD_ours : MonoBehaviour {
 
     // public Inventory Inventory;
 
-    public GameObject MessagePanel;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -104,7 +104,7 @@ public class HUD_ours : MonoBehaviour {
         get { return mIsMessagePanelOpened; }
     }
 
-    public void OpenMessagePanel(InteractableItemBaseClass item)
+   /* public void OpenMessagePanel(InteractableItemBaseClass item)
     {
         MessagePanel.SetActive(true);
 
@@ -133,5 +133,5 @@ public class HUD_ours : MonoBehaviour {
         MessagePanel.SetActive(false);
 
         mIsMessagePanelOpened = false;
-    }
+    }*/
 }
