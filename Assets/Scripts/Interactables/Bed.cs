@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Security.Cryptography;
 using Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -214,7 +215,7 @@ public class Bed : InteractableItemBaseClass {
     {
         while (true)
         {
-            yield return new WaitForSeconds(weedSpanRate); 
+            yield return new WaitForSeconds(Random.Range(weedSpanRate, weedSpanRate+30f)); 
         newWeed = Instantiate(_weedPrefab, transform.position + new Vector3(Random.Range(-0.4f, 0.4f), 0.1f, Random.Range(-0.4f, 0.4f)), Quaternion.identity, this.transform); 
         weedList.Add(newWeed);
         if (_myPlant != null)

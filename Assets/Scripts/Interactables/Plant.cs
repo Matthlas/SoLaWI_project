@@ -18,7 +18,7 @@ public class Plant : MonoBehaviour
 
     //plant specific parameters
     [SerializeField] public float maxSize = 3f;
-    [SerializeField] public new float GrowthRate;
+    [SerializeField] public float GrowthRate;
     
 
     public float size = 1f;
@@ -34,7 +34,8 @@ public class Plant : MonoBehaviour
     void Start()
     {
         StartCoroutine(checkIfDead());
-       // kindOfPlant = SeedListener.getCurrentPlant();
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        // kindOfPlant = SeedListener.getCurrentPlant();
         //InvokeRepeating("Grow", growthTickRate, growthTickRate);
         // There is also "Cancel Invoke" might be helpful. But changing the growing condition is already enough I think. Could also be replaced by a coroutine
     }
