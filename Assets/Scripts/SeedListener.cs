@@ -1,12 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SeedListener : MonoBehaviour
 {
     [SerializeField]
     public KeyCode _key;
+
+    [SerializeField]
+    public Sprite[] Images = new Sprite[3];
     
     public enum PlantSeeds
     {
@@ -47,11 +52,31 @@ public class SeedListener : MonoBehaviour
             }
 
             currentPlant = plants[plantMode];
-
-            //TODO: Change Picture of Seed in inventory depending on current plant
+            StartCoroutine(showCurrentPlant());
+            
 
         }
     }
+
+    private IEnumerator showCurrentPlant()
+    {
+        //enable all images
+       foreach (var image in gameObject.GetComponentsInChildren<UnityEngine.UI.Image>())
+       {
+           image.enabled = true;
+       }
+       //change ItemImage
+       GameObject.FindGameObjectWithTag("ItsMe!").GetComponent<UnityEngine.UI.Image>().sprite = 
+           Images[plantMode];
+       
+       yield return new WaitForSeconds(2);
+       //disable all images
+       foreach (var image in gameObject.GetComponentsInChildren<UnityEngine.UI.Image>())
+       {
+           image.enabled = false;
+       }
+    }
+    
 
     public static PlantSeeds getCurrentPlant()
     {

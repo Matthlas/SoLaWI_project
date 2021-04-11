@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Image: {fileID: 0}
-  InteractText: Left click to interact with item
+  InteractText: 
   ItemType: 0
   _interactionCue: {fileID: 8316701143637202629}
   _myPlant: {fileID: 0}

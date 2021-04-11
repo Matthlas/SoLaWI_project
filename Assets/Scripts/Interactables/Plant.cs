@@ -34,7 +34,6 @@ public class Plant : MonoBehaviour
     void Start()
     {
         StartCoroutine(checkIfDead());
-        gameObject.GetComponent<CapsuleCollider>().enabled = false;
         // kindOfPlant = SeedListener.getCurrentPlant();
         //InvokeRepeating("Grow", growthTickRate, growthTickRate);
         // There is also "Cancel Invoke" might be helpful. But changing the growing condition is already enough I think. Could also be replaced by a coroutine
