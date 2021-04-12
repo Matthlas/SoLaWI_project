@@ -1,9 +1,11 @@
 # SoLaWille
 ## A game about starting your own community supported agriculture farm
-### Created by Lukas Rehberg, Emma Seeger and Matthias Richter
-#### A Project for the Introduction to Unity course 2021 at UOS
+#### Created by Lukas Rehberg, Emma Seeger and Matthias Richter as a Project for the Introduction to Unity course 2021 at UOS
 
-https://youtu.be/B4_037opUOE
+
+Link to a Let's Play video showing off the features of the game: https://youtu.be/B4_037opUOE
+
+
 
 ## Assests used:
  - Low Poly Game Kit
