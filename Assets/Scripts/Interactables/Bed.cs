@@ -18,7 +18,7 @@ public class Bed : InteractableItemBaseClass {
 
     //weeding variables
     [SerializeField] private GameObject _weedPrefab;
-    private float weedSpanRate = 10f;
+    private float weedSpanRate = 15f;
     private GameObject newWeed;
     private List<GameObject> weedList = new List<GameObject>();
 
@@ -120,7 +120,7 @@ public class Bed : InteractableItemBaseClass {
             this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
         
             //Dry after some time
-            Invoke("Dry", 10f);
+            Invoke("Dry", 30f);
             
         
             //if we have plant water plant
@@ -208,7 +208,7 @@ public class Bed : InteractableItemBaseClass {
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(weedSpanRate, weedSpanRate+30f)); 
+            yield return new WaitForSeconds(Random.Range(weedSpanRate, weedSpanRate+15f)); 
         newWeed = Instantiate(_weedPrefab, transform.position + new Vector3(Random.Range(-0.4f, 0.4f), 0.1f, Random.Range(-0.4f, 0.4f)), Quaternion.identity, this.transform); 
         weedList.Add(newWeed);
         if (_myPlant != null)
