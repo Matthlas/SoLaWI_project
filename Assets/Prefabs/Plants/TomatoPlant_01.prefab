@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSize: {x: 2, y: 2, z: 2}
-  growth_time: 40
+  growth_time: 50
   _harvestCue: {fileID: 7772444649482243928, guid: 8b2072ddf2636c948bbc818180891e1d, type: 3}

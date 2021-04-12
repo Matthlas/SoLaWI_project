@@ -66,7 +66,7 @@ public class Plant : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material.color = sickColor;
             }
             // Plant dies if there are too many weeds
-            if (obstructiveWeeds >= 4)
+            if (obstructiveWeeds >= 5)
             {
                 Destroy(this.gameObject);
             }

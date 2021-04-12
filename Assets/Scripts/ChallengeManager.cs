@@ -44,7 +44,7 @@ public class ChallengeManager : MonoBehaviour
                 "You don't really have anything better to do, so you go on with gardening." +
                 " Additionally to the Beets, you'll try Tomatoes and Cabbages," +
                 " because you love autumnal tomatosoups. \n" +
-                " Harvest 30 Beets, 10 Tomatoes and 10 Cabbages! \n" +
+                " <b> Harvest 30 Beets, 10 Tomatoes and 10 Cabbages! Beware of the weeds. If they get too many they hurt your plants <b> \n" +
                 "Press K to close window";   
             ScoreboardHandler.newChallenge(new int[]{30,10,10});
         }
@@ -57,6 +57,7 @@ public class ChallengeManager : MonoBehaviour
                 " and your love for music. The guitar really helps you connect with your real true " +
                 "authentic inner self. For your new agriculture model, you need to \n" +
                 "Harvest 50 Beets, 50 Tomatoes and 50 Cabbages! \n" +
+                " But don't wort too much. Take a break an play some guitar from time to time. \n" +
                 "Press K to close window";
             ScoreboardHandler.newChallenge(new int[]{50,50,50});
         }
