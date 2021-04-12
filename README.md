@@ -8,7 +8,8 @@ Link to a Let's Play video showing off the features of the game: https://youtu.b
 
 
 ## Assests used:
- - Low Poly Game Kit
+ - Low Poly Game Kit: Inspiration for parts of the Game Logic, Player character and animation, terrain and some tree prefabs
+ 
  - Low Poly Nature - Free Vegetation
  - Classic Acousic Guitar
  - Low Poly Farm Lite
