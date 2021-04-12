@@ -104,7 +104,7 @@ public class Bed : InteractableItemBaseClass {
             // if bed is wet and we plant something plant instantly grows
             if (watered)
             {
-                _myPlant.Grow();
+                _myPlant.Water();
             }
 
         }
@@ -120,20 +120,13 @@ public class Bed : InteractableItemBaseClass {
             this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0.5f);
         
             //Dry after some time
-            Invoke("Dry", 40f);
+            Invoke("Dry", 10f);
             
         
             //if we have plant water plant
             if (_myPlant != null)
             {
-                _myPlant.Grow();
-                
-                if (_myPlant.readyToHarvest)
-                    {
-                        _interactionCue.Play();
-                    }
-                
-                
+                _myPlant.Water();
             }
             else
             {
@@ -144,14 +137,14 @@ public class Bed : InteractableItemBaseClass {
 
     private void Dry()
     {
-        /*if (_myPlant != null)
+        if (_myPlant != null)
         {
             _myPlant.Dry();
         }
         else
         {
             bedMode = BedFSM.plain;
-        }*/
+        }
         //Change color to lighter
         this.GetComponent<MeshRenderer>().material.SetFloat("_Metallic", 0f);
         watered = false;
@@ -169,11 +162,11 @@ public class Bed : InteractableItemBaseClass {
         if (_myPlant != null)
         {
             _myPlant.obstructiveWeeds = 0;
-            //if first watered then weeded, check if now plant can grow
+            /*//if first watered then weeded, check if now plant can grow
             if (watered && !_myPlant.growingCondition && (_myPlant.size < _myPlant.maxSize))
             {
-                _myPlant.Grow();
-            }
+                _myPlant.Water();
+            }*/
         }
         else
         {
