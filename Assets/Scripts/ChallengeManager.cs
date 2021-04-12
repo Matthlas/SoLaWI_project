@@ -30,7 +30,7 @@ public class ChallengeManager : MonoBehaviour
                 "to take you: \n <b> SoLaWille </b> \n To start your new life you want " +
                 "to get back to nature. And what better way to reconnect with your roots than " +
                 "to plant some root vegetables? Your favorite root vegetable is the beet. \n" +
-                "Harvest 10 Beets! \n" +
+                "<b>Harvest 10 Beets! </b>\n\n" +
                 "Press K to close window";
             ScoreboardHandler.newChallenge(new int[]{10,0,0});
         }
@@ -44,7 +44,7 @@ public class ChallengeManager : MonoBehaviour
                 "You don't really have anything better to do, so you go on with gardening." +
                 " Additionally to the Beets, you'll try Tomatoes and Cabbages," +
                 " because you love autumnal tomatosoups. \n" +
-                " <b> Harvest 30 Beets, 10 Tomatoes and 10 Cabbages! Beware of the weeds. If they get too many they hurt your plants <b> \n" +
+                "<b>Harvest 30 Beets, 10 Tomatoes and 10 Cabbages! Beware of the weeds. If they get too many they hurt your plants </b> \n\n" +
                 "Press K to close window";   
             ScoreboardHandler.newChallenge(new int[]{30,10,10});
         }
@@ -56,8 +56,9 @@ public class ChallengeManager : MonoBehaviour
                 " a farmer for a community supported agriculture. You will find your spirituality" +
                 " and your love for music. The guitar really helps you connect with your real true " +
                 "authentic inner self. For your new agriculture model, you need to \n" +
-                "Harvest 50 Beets, 50 Tomatoes and 50 Cabbages! \n" +
-                " But don't wort too much. Take a break an play some guitar from time to time. \n" +
+                "<b>Harvest 50 Beets, 50 Tomatoes and 50 Cabbages!</b> \n" +
+                "But don't work too much. Take a break and play some guitar from time to time. \n \n" +
+                "Additional Challenge: You think there might be some more fertile soil around to enlarge your farm. Perhaps try digging up some new beds...\n\n" +
                 "Press K to close window";
             ScoreboardHandler.newChallenge(new int[]{50,50,50});
         }
