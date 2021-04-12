@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958722014476425859}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 75a7e79a1743ac646a971f75ffae13fd, type: 3}
 --- !u!23 &958722014476425861
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -114,12 +114,12 @@ MonoBehaviour:
   InteractText: 
   ItemType: 0
   _interactionCue: {fileID: 8316701143637202629}
-  _myPlant: {fileID: 0}
   plantprefabs:
   - {fileID: -5987405078209597224, guid: 081319ef3e436a44295662d8fa47dd02, type: 3}
   - {fileID: 2557484079638273125, guid: 78da2ace1ab76ce478600ebe37fa10fe, type: 3}
   - {fileID: 4291954471443803549, guid: aec8969d0290c6d4cbc587ef85a01ce4, type: 3}
   _weedPrefab: {fileID: 100000, guid: ba9003367410cc047bdcb941db473a1c, type: 3}
+  bedMode: 1
 --- !u!1001 &958722015279188004
 PrefabInstance:
   m_ObjectHideFlags: 0

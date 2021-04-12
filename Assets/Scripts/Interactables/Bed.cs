@@ -10,8 +10,6 @@ using Random = UnityEngine.Random;
 public class Bed : InteractableItemBaseClass {
 
     
-    [SerializeField]
-    //public Plant _plantPrefab;
     private Plant _myPlant;
     //public GameObject _myPlant;
     [SerializeField] public Plant[] plantprefabs = new Plant[3]; //different kinds of plants
@@ -24,48 +22,60 @@ public class Bed : InteractableItemBaseClass {
 
     private bool watered = false;
     private SeedListener.PlantSeeds kindOfPlant;
+
+    private Color inactiveColor = new Color(0.443f, 0.612f, 0.195f, 0.5f);
+    private Color activeColor = new Color(0.39f, 0.06f, 0f, 1f);
+    
     //finite state machine for plant
-    private enum BedFSM
+    public enum BedFSM
     {
+        inactive,
         plain,
         planted
     }
     // default state
-    BedFSM bedMode = BedFSM.plain;
+    public BedFSM bedMode = BedFSM.plain;
 
     private void Start()
     {
+        if (bedMode == BedFSM.inactive)
+        {
+            gameObject.GetComponent<Renderer>().material.color = inactiveColor;
+        }
         StartCoroutine(SpawnWeeds());
     }
-
-
+    
+    
     public override void OnInteract()
     {
         PlayerControllerAdapted.Mode mode = 
             GameObject.Find("Player").GetComponent<PlayerControllerAdapted>().getMode();
         //perform an action depending on the mode
-        if (mode == PlayerControllerAdapted.Mode.Säen)
+        if (bedMode != BedFSM.inactive)
         {
-            Planting();
-            bedMode = BedFSM.planted;
+
+            if (mode == PlayerControllerAdapted.Mode.Säen)
+            {
+                Planting();
+                bedMode = BedFSM.planted;
+            }
+            else if (mode == PlayerControllerAdapted.Mode.Giessen)
+            {
+                Watering();
+            }
+            else if (mode == PlayerControllerAdapted.Mode.Jäten)
+            {
+                Weeding();
+            }
+            else if (mode == PlayerControllerAdapted.Mode.Ernten)
+            {
+                Harvesting();
+                bedMode = BedFSM.plain;
+            }
         }
-        else if (mode == PlayerControllerAdapted.Mode.Giessen)
-        {
-            Watering();
-        }
-        else if (mode == PlayerControllerAdapted.Mode.Jäten)
-        {
-            Weeding();
-        }
-        else if (mode == PlayerControllerAdapted.Mode.Ernten)
-        {
-            Harvesting();
-            bedMode = BedFSM.plain;
-        }
-        else if (mode == PlayerControllerAdapted.Mode.Buddeln)
+        if (mode == PlayerControllerAdapted.Mode.Buddeln)
         {
             Dig();
-            bedMode = BedFSM.plain;
         }
         
     }
@@ -193,6 +203,12 @@ public class Bed : InteractableItemBaseClass {
 
     public void Dig()
     {
+        if (bedMode == BedFSM.inactive)
+        {
+            gameObject.GetComponent<Renderer>().material.color = activeColor;
+            gameObject.transform.position += new Vector3(0f, 0.3f, 0f);
+
+        }
         if (_myPlant != null)
         {
             Destroy(_myPlant.gameObject);
@@ -208,18 +224,22 @@ public class Bed : InteractableItemBaseClass {
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(weedSpanRate, weedSpanRate+15f)); 
-        newWeed = Instantiate(_weedPrefab, transform.position + new Vector3(Random.Range(-0.4f, 0.4f), 0.1f, Random.Range(-0.4f, 0.4f)), Quaternion.identity, this.transform); 
-        weedList.Add(newWeed);
-        if (_myPlant != null)
-        {
-            _myPlant.obstructiveWeeds += 1;
-        }
-        else
-        {
-            bedMode = BedFSM.plain;
-        }
-        
+            yield return new WaitForSeconds(Random.Range(weedSpanRate, weedSpanRate+15f));
+            if (bedMode != BedFSM.inactive)
+            {
+                newWeed = Instantiate(_weedPrefab,
+                    transform.position + new Vector3(Random.Range(-0.4f, 0.4f), 0.1f, Random.Range(-0.4f, 0.4f)),
+                    Quaternion.identity, this.transform);
+                weedList.Add(newWeed);
+                if (_myPlant != null)
+                {
+                    _myPlant.obstructiveWeeds += 1;
+                }
+                else
+                {
+                    bedMode = BedFSM.plain;
+                }
+            }
         }
     }
 

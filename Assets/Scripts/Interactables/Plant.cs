@@ -38,7 +38,6 @@ public class Plant : MonoBehaviour
         
         // kindOfPlant = SeedListener.getCurrentPlant();
         InvokeRepeating("CheckGrowth", growthTickRate, growthTickRate);
-        Debug.Log(gameObject.GetComponent<Renderer>().material.color);
     }
     
 

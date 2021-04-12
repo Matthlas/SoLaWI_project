@@ -11,8 +11,6 @@ public class GuitarHandler : InteractableItemBaseClass
 
     private bool whichAudio = true;
 
-    private bool isPlaying = false;
-    
     float originalY;
 
     public float floatStrength = 1; 
@@ -24,17 +22,19 @@ public class GuitarHandler : InteractableItemBaseClass
 
     void Update()
     {
+        // Guitar floats when its not selected to indicate that its interactable
         if (!selected)
         {
             transform.position = new Vector3(transform.position.x,
                 originalY + ((float) Math.Sin(Time.time) * floatStrength),
                 transform.position.z);
         }
+        
     }
     
     public override void OnInteract()
     {
-        if (!isPlaying)
+        if (!gameObject.GetComponent<AudioSource>().isPlaying)
         {
             if (whichAudio)
             {
@@ -45,28 +45,17 @@ public class GuitarHandler : InteractableItemBaseClass
                 gameObject.GetComponent<AudioSource>().clip = audio2;
             }
             //set Soundtrack on later Point so it doesn't disturb
-            gameObject.transform.parent.GetComponent<AudioSource>().time = 360f;
+            gameObject.transform.parent.GetComponent<AudioSource>().time = 420f;
             gameObject.transform.parent.GetComponent<AudioSource>().Play();
             
             //start audio
             gameObject.GetComponent<AudioSource>().Play();
-
             whichAudio = !whichAudio;
-            isPlaying = true;
-            StartCoroutine(waitTilEnd());
         }
         else
         {
             gameObject.GetComponent<AudioSource>().Stop();
-            isPlaying = false;
 
         }
-        
-    }
-    public IEnumerator waitTilEnd()
-    {
-        yield return new WaitForSeconds(35);
-        isPlaying = false;
-
     }
 }
