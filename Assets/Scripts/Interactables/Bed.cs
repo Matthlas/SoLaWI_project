@@ -16,7 +16,7 @@ public class Bed : InteractableItemBaseClass {
 
     //weeding variables
     [SerializeField] private GameObject _weedPrefab;
-    private float weedSpanRate = 15f;
+    private float weedSpanRate = 25f;
     private GameObject newWeed;
     private List<GameObject> weedList = new List<GameObject>();
 
