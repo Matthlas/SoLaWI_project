@@ -109,6 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346978f5a75e04d1eb0dc41f3ffa973b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSize: {x: 3.5, y: 3.5, z: 3.5}
+  targetSize: {x: 3, y: 3, z: 3}
   growth_time: 40
   _harvestCue: {fileID: 7772444649482243928, guid: 8b2072ddf2636c948bbc818180891e1d, type: 3}

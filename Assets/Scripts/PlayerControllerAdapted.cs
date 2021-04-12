@@ -29,68 +29,36 @@ public class PlayerControllerAdapted : MonoBehaviour
     private Vector3 _moveDirection = Vector3.zero;
 
     private InventoryItemBase mCurrentItem = null;
-
-    public GameObject Item;
-
-    // private HealthBar mHealthBar;
-
-    // private HealthBar mFoodBar;
-
-    // private int startHealth;
-
-    // private int startFood;
-
-    // private bool mCanTakeDamage = true;
-
-    #endregion
-    //private InteractableItemBaseClass mInteractItem = null;
+    
     private List<InteractableItemBaseClass> InteractItemsList = new List<InteractableItemBaseClass>();
+    
     private Mode mode;
     
+    #endregion
+
+    
+    
     #region Public Members
+    
+    public GameObject Item;
 
     public float Speed = 5.0f;
 
     public float RotationSpeed = 240.0f;
-
     
     public GameObject Hand;
-
-    public HUD_ours Hud;
-
-    public float JumpSpeed = 7.0f;
-
-    // public event EventHandler PlayerDied;
 
     public Transform cam;
 
     #endregion
     
-
-    // public UnityEvent QuestCompleted;
-
-    // Use this for initialization
+    
+    
     void Start()
     {
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
         mode = Mode.Giessen;
-        //Inventory.ItemUsed += Inventory_ItemUsed;
-        //Inventory.ItemRemoved += Inventory_ItemRemoved;
-
-        // mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
-        // mHealthBar.Min = 0;
-        // mHealthBar.Max = Health;
-        // startHealth = Health;
-        // mHealthBar.SetValue(Health);
-
-        // mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
-        // mFoodBar.Min = 0;
-        // mFoodBar.Max = Food;
-        // startFood = Food;
-        // mFoodBar.SetValue(Food);
-        //
-        // InvokeRepeating("IncreaseHunger", 0, HungerRate);
     }
 
 
@@ -115,8 +83,8 @@ public class PlayerControllerAdapted : MonoBehaviour
          currentItem.SetActive(active);
          currentItem.transform.parent = active ? Hand.transform : null;
      }
-    //
-    //
+
+     
      private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
      {
          if (e.Item.ItemType != EItemType.Consumable)
@@ -136,212 +104,9 @@ public class PlayerControllerAdapted : MonoBehaviour
          }
     
      }
-    //
-    // private int Attack_1_Hash = Animator.StringToHash("Base Layer.Attack_1");
-    //
-    // public bool IsAttacking
-    // {
-    //     get
-    //     {
-    //         AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-    //         if (stateInfo.fullPathHash == Attack_1_Hash)
-    //         {
-    //             return true;
-    //         }
-    //         return false;
-    //     }
-    // }
-    //
-    // public void DropCurrentItem()
-    // {
-    //     mCanTakeDamage = false;
-    //
-    //     _animator.SetTrigger("tr_drop");
-    //
-    //     GameObject goItem = (mCurrentItem as MonoBehaviour).gameObject;
-    //
-    //     Inventory.RemoveItem(mCurrentItem);
-    //
-    //     // Throw animation
-    //     Rigidbody rbItem = goItem.AddComponent<Rigidbody>();
-    //     if (rbItem != null)
-    //     {
-    //         rbItem.AddForce(transform.forward * 2.0f, ForceMode.Impulse);
-    //
-    //         Invoke("DoDropItem", 0.25f);
-    //     }
-    // }
-    //
-    // public void DropAndDestroyCurrentItem()
-    // {
-    //     GameObject goItem = (mCurrentItem as MonoBehaviour).gameObject;
-    //
-    //     Inventory.RemoveItem(mCurrentItem);
-    //
-    //     Destroy(goItem);
-    //
-    //     mCurrentItem = null;
-    // }
-    //
-    // public void DoDropItem()
-    // {
-    //     mCanTakeDamage = true;
-    //     if (mCurrentItem != null)
-    //     {
-    //         // Remove Rigidbody
-    //         Destroy((mCurrentItem as MonoBehaviour).GetComponent<Rigidbody>());
-    //
-    //         mCurrentItem = null;
-    //
-    //         mCanTakeDamage = true;
-    //     }
-    // }
-    //
-     #endregion
-
-    // #region Health & Hunger
-    //
-    // [Tooltip("Amount of health")]
-    // public int Health = 100;
-    //
-    // [Tooltip("Amount of food")]
-    // public int Food = 100;
-    //
-    // [Tooltip("Rate in seconds in which the hunger increases")]
-    // public float HungerRate = 0.5f;
-    //
-    // public void IncreaseHunger()
-    // {
-    //     Food--;
-    //     if (Food < 0)
-    //         Food = 0;
-    //
-    //     mFoodBar.SetValue(Food);
-    //
-    //     if (Food == 0)
-    //     {
-    //         CancelInvoke();
-    //         Die();
-    //     }
-    // }
-    //
-    // public bool IsDead = true;
-    // {
-    //     get
-    //     {
-    //         return Health == 0 || Food == 0;
-    //     }
-    // }
-    //
-    // public bool CarriesItem(string itemName)
-    // {
-    //     if (mCurrentItem == null)
-    //         return false;
-    //
-    //     return (mCurrentItem.Name == itemName);
-    // }
-
-    // public InventoryItemBase GetCurrentItem()
-    // {
-    //     return mCurrentItem;
-    // }
-
-    // public bool IsArmed
-    // {
-    //     get
-    //     {
-    //         if (mCurrentItem == null)
-    //             return false;
-    //
-    //         return mCurrentItem.ItemType == EItemType.Weapon;
-    //     }
-    // }
-    //
-    //
-    // public void Eat(int amount)
-    // {
-    //     Food += amount;
-    //     if (Food > startFood)
-    //     {
-    //         Food = startFood;
-    //     }
-    //
-    //     mFoodBar.SetValue(Food);
-    //
-    // }
-    //
-    // public void Rehab(int amount)
-    // {
-    //     Health += amount;
-    //     if (Health > startHealth)
-    //     {
-    //         Health = startHealth;
-    //     }
-    //
-    //     mHealthBar.SetValue(Health);
-    // }
-    //
-    // public void TakeDamage(int amount)
-    // {
-    //     if (!mCanTakeDamage)
-    //         return;
-    //
-    //     Health -= amount;
-    //     if (Health < 0)
-    //         Health = 0;
-    //
-    //     mHealthBar.SetValue(Health);
-    //
-    //     if (IsDead)
-    //     {
-    //         Die();
-    //     }
-    //
-    // }
-    //
-    //
-    // private void Die()
-    // {
-    //     _animator.SetTrigger("death");
-    //
-    //     if (PlayerDied != null)
-    //     {
-    //         PlayerDied(this, EventArgs.Empty);
-    //     }
-    // }
-    //
-    // #endregion
-
-
-    // public void Talk()
-    // {
-    //     _animator.SetTrigger("tr_talk");
-    // }
-
-    // private bool mIsControlEnabled = true;
-    //
-    // public void EnableControl()
-    // {
-    //     mIsControlEnabled = true;
-    // }
-    //
-    // public void DisableControl()
-    // {
-    //     mIsControlEnabled = false;
-    // }
     
-
-    // void FixedUpdate()
-    // {
-    //     if (!IsDead)
-    //     {
-    //         // Drop item
-    //         if (mCurrentItem != null && Input.GetKeyDown(KeyCode.R))
-    //         {
-    //             DropCurrentItem();
-    //         }
-    //     }
-    // }
+     #endregion
+     
     
 
     // Update is called once per frame
@@ -364,33 +129,6 @@ public class PlayerControllerAdapted : MonoBehaviour
                 // Interaction function of the object
                 InteractItemsList[i].OnInteract();
             }
-
-
-            // if (mInteractItem is InventoryItemBase)
-            // {
-            //     InventoryItemBase inventoryItem = mInteractItem as InventoryItemBase;
-            //     Inventory.AddItem(inventoryItem);
-            //     inventoryItem.OnPickup();
-            //
-            //     if (inventoryItem.UseItemAfterPickup)
-            //     {
-            //         Inventory.UseItem(inventoryItem);
-            //     }
-            //     Hud.CloseMessagePanel();
-            //     mInteractItem = null;
-            // }
-            //else
-            //{
-            //    if (mInteractItem.ContinueInteract())
-            //    {
-            //        Hud.OpenMessagePanel(mInteractItem);
-            //    }
-            //    else
-            //    {
-            //        Hud.CloseMessagePanel();
-            //        mInteractItem = null;
-            //    }
-            //}
         }
     }
 
@@ -454,20 +192,8 @@ public class PlayerControllerAdapted : MonoBehaviour
         if (_characterController.isGrounded)
         {
             _moveDirection = transform.forward * move.magnitude;
-
             _moveDirection *= Speed;
-
-            /*if (Input.GetButton("Jump"))
-            {
-                _animator.SetBool("is_in_air", true);
-                _moveDirection.y = JumpSpeed;
-
-            }
-            else
-            {*/
-               // _animator.SetBool("is_in_air", false);
-                _animator.SetBool("run", move.magnitude > 0);
-            //}
+            _animator.SetBool("run", move.magnitude > 0);
         }
         else
         {
