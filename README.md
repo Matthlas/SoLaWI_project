@@ -9,7 +9,7 @@ Link to builds of the game for windows, mac and linux: https://1drv.ms/u/s!AiYro
 
 
 
-## Assests used:
+## Assets used:
  - Low Poly Game Kit: Inspiration for parts of the Game Logic, Player character and animation, terrain and some tree prefabs
  
  - Low Poly Nature - Free Vegetation
