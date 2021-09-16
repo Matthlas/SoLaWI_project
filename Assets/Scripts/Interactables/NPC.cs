@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using Cinemachine;
 using UnityEngine;
@@ -10,31 +11,43 @@ using Random = UnityEngine.Random;
 public class NPC : InteractableItemBaseClass
 {
 
-    public Dialogue dialogue;
- 
-    /*finite state machine for Quest/NPC status
-    public enum NPCFSM
-    {
+    public Dialogue dialogue1;
+    public Dialogue dialogue2;
+    //finite state machine for Quest/NPC status
+    public enum NPCFSM {
         inactive,
-        plain,
-        planted
+        pending,
+        completed
     }
     // default state
-    public BedFSM bedMode = BedFSM.plain;
-    if (bedMode != BedFSM.inactive)
-        {
+    public NPCFSM NPCMode = NPCFSM.inactive;
+    
+    
 
-        }
-    */
-
-    public void triggerDialogue()
+    public void triggerDialogue(Dialogue dialogue)
     { 
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 
     public override void OnInteract()
-    {
-        triggerDialogue();
+    {   
+        if (NPCMode == NPCFSM.pending)
+        {
+            triggerDialogue(dialogue2);
+            //insert something like: if pressed continue then change npc mode
+            NPCMode = NPCFSM.pending;
+        }
+        if (NPCMode == NPCFSM.inactive)
+        {
+            triggerDialogue(dialogue1);
+            //insert something like: if pressed continue then change npc mode
+            NPCMode = NPCFSM.pending;
+        }
+        else
+        {
+            return;
+        }
+
     }
 
 
