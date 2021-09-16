@@ -20,7 +20,7 @@ public class NPC : InteractableItemBaseClass
     [SerializeField]
     public GameObject QuestItem;
     
-    public bool Qcompleted = false;
+    public static bool Qcompleted = false;
     //finite state machine for Quest/NPC status
     public enum NPCFSM {
         inactive,
@@ -29,10 +29,6 @@ public class NPC : InteractableItemBaseClass
     }
     // default state
     public NPCFSM NPCMode = NPCFSM.inactive;
- 
-    
-    
-    
     
 
     public void triggerDialogue(Dialogue dialogue)
@@ -42,12 +38,15 @@ public class NPC : InteractableItemBaseClass
 
     public override void OnInteract()
     {
-        if (NPCMode == NPCFSM.inactive)
+        if (Qcompleted == true)
         {
-            triggerDialogue(dialogue1);
-            //insert something like: if pressed continue then change npc mode
-            
-            NPCMode = NPCFSM.pending;
+            Debug.Log("completed");
+            NPCMode = NPCFSM.completed;
+        }
+        if (NPCMode == NPCFSM.completed)
+        {
+            triggerDialogue(dialogue3);
+            //insert something like: if pressed continue then change npc mod
         }
         if (NPCMode == NPCFSM.pending)
         {
@@ -56,22 +55,16 @@ public class NPC : InteractableItemBaseClass
             //spawns quest Item
             MeshRenderer spawnItem = QuestItem.GetComponent<MeshRenderer>();
             spawnItem.enabled = true;
-            
-            if (Qcompleted == true)
-            {
-                NPCMode = NPCFSM.completed;
-            }
-            
+
         }
-        if (NPCMode == NPCFSM.completed)
+        if (NPCMode == NPCFSM.inactive)
         {
-            triggerDialogue(dialogue3);
-            //insert something like: if pressed continue then change npc mod
+            triggerDialogue(dialogue1);
+            //insert something like: if pressed continue then change npc mode
+            
+            NPCMode = NPCFSM.pending;
         }
-        else
-        {
-            return;
-        }
+        
 
     }
 

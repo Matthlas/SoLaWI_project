@@ -10,6 +10,7 @@ public enum EnumItemType
     Bed,
     Plant,
     NPC,
+    QuestItem,
     Guitar
 }
 
