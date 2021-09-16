@@ -9,6 +9,7 @@ public enum EnumItemType
     Default,
     Bed,
     Plant,
+    NPC,
     Guitar
 }
 
