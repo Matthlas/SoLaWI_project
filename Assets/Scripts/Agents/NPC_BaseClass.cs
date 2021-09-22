@@ -19,9 +19,6 @@ public abstract class NPC_BaseClass : MonoBehaviour
     public float chillTime = 5.0f;
     public bool chillin = false;
     
-    //Initialize all possible States here:
-    
-
     
     public virtual void OnEnable()
     {
@@ -32,8 +29,8 @@ public abstract class NPC_BaseClass : MonoBehaviour
         if (navAgent == null)
             navAgent = GetComponent<NavMeshAgent>();
     }
-    
-    private bool IsNavMeshMoving
+
+    protected bool IsNavMeshMoving
     { 
         get
         { 
@@ -53,7 +50,7 @@ public abstract class NPC_BaseClass : MonoBehaviour
         animate();
     }
 
-    public void animate()
+    public virtual void animate()
     // Override this method for different agents with different walking animations
     {
         //Walk animation if the agent is moving
