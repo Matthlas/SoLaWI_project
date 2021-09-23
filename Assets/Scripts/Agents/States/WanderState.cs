@@ -18,8 +18,8 @@ public class WanderState : IdleBasicState
     [SerializeField] public float ExplorationRadius = 2.0f;
     [SerializeField] public float chillTime = 5.0f;
     public bool chillin = false;
-    
-    private void OnEnable()
+
+    protected override void OnEnable()
     {
         npc = this.GetComponent<NPC_BaseClass>();
         wanderState = this;

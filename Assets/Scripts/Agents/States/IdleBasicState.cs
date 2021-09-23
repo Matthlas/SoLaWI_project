@@ -13,9 +13,9 @@ public class IdleBasicState : NPCState
     [HideInInspector] public NPC_BaseClass npc;
     [HideInInspector] public IdleBasicState idleState;
     [HideInInspector] public AvoidState avoidState;
-    
 
-    private void OnEnable()
+
+    protected virtual void OnEnable()
     {
         npc = this.GetComponent<NPC_BaseClass>();
         idleState = this;

@@ -39,7 +39,7 @@ public class PerformTaskState : NPCState
         }
         else
         {
-            if (!myTask.active && !myTask.done)
+            if (!myTask.active & !myTask.done)
             {
                 myTask.StartTask();
                 npc.animateWorking();

@@ -9,6 +9,9 @@ public class NPC_Task_Controller : MonoBehaviour
     public NPCTask activeTask;
 
     private int TaskCounter = 0;
+
+    private bool restingAfterDone = false;
+    private float restingTimeBetweenTasks = 5f;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -18,30 +21,35 @@ public class NPC_Task_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("TaskCounter ");
-        Debug.Log(TaskCounter);
-        Debug.Log("tasks.count ");
-        Debug.Log(tasks.Count);
-         
-        if (activeTask.done)
-        {
-            TaskCounter += 1;
+        if (activeTask.done & !restingAfterDone)
+            Debug.Log("SettingNextTask in 2sec");
+            restingAfterDone = true;
+            Invoke("SetNextTask", restingTimeBetweenTasks);
             
-        }
-
-        if (TaskCounter == tasks.Count)
-        {
-            TaskCounter = 0;
-            foreach (var task in tasks)
-            {
-                task.done = false;
-            }
-        }
-        activeTask = tasks[TaskCounter];
     }
 
+    private void SetNextTask()
+    {
+        Debug.Log("Now I'm here");
+        TaskCounter += 1;
+        activeTask = tasks[TaskCounter % tasks.Count];
+        Debug.Log(activeTask);
+        if (TaskCounter % tasks.Count == 0)
+            RestTaskList();
+        CancelInvoke("SetNextTask");
+        restingAfterDone = false;
+    }
+    
     public NPCTask currentTask()
     {
         return activeTask;
+    }
+
+    private void RestTaskList()
+    {
+        foreach (var task in tasks)
+        {
+            task.done = false;
+        }
     }
 }
