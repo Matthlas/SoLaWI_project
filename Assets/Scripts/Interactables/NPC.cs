@@ -19,7 +19,10 @@ public class NPC : InteractableItemBaseClass
 
     [SerializeField]
     public GameObject QuestItem;
+
+    public Collider n_collider;
     
+  
     public static bool Qcompleted = false;
     //finite state machine for Quest/NPC status
     public enum NPCFSM {
@@ -35,17 +38,21 @@ public class NPC : InteractableItemBaseClass
     { 
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
+    
+    // depending on the state of the NPC's quest a different dialogue is played
 
     public override void OnInteract()
     {
+       // n_collider = this.gameObject.GetComponent. < CapsuleCollider > ();
         if (Qcompleted == true)
         {
-            Debug.Log("completed");
+            
             NPCMode = NPCFSM.completed;
         }
         if (NPCMode == NPCFSM.completed)
         {
             triggerDialogue(dialogue3);
+            //n_collider.enabled  = true;
             //insert something like: if pressed continue then change npc mod
         }
         if (NPCMode == NPCFSM.pending)
@@ -61,18 +68,15 @@ public class NPC : InteractableItemBaseClass
         {
             triggerDialogue(dialogue1);
             //insert something like: if pressed continue then change npc mode
-            
             NPCMode = NPCFSM.pending;
         }
         
 
     }
 
-
-
-
-
-
-
+    public object CapsuleCollider { get; set; }
 }
+
+
+
 
