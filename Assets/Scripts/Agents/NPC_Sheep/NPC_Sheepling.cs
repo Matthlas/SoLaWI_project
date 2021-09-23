@@ -4,23 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(WanderState_Sheep))]
-[RequireComponent(typeof(AvoidState_Sheep))]
-[RequireComponent(typeof(FollowState_Sheep))]
+[RequireComponent(typeof(WanderState))]
+[RequireComponent(typeof(AvoidState))]
+[RequireComponent(typeof(FollowState))]
 
 public class NPC_Sheepling : NPC_BaseClass
 {
     
-    [HideInInspector] public WanderState_Sheep wanderState;
-    [HideInInspector] public FollowState_Sheep followState;
-    [HideInInspector] public AvoidState_Sheep avoidState;
+    [HideInInspector] public WanderState wanderState;
+    [HideInInspector] public FollowState followState;
+    [HideInInspector] public AvoidState avoidState;
     
 
     public override void OnEnable()
     {
-        wanderState = this.GetComponent<WanderState_Sheep>();
-        followState = this.GetComponent<FollowState_Sheep>();
-        avoidState = this.GetComponent<AvoidState_Sheep>();
+        wanderState = this.GetComponent<WanderState>();
+        followState = this.GetComponent<FollowState>();
+        avoidState = this.GetComponent<AvoidState>();
         currentState = wanderState;
         if (mAnimator == null)
             mAnimator = GetComponent<Animator>();

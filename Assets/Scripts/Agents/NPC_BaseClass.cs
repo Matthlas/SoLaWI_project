@@ -14,16 +14,16 @@ public abstract class NPC_BaseClass : MonoBehaviour
     
     //Animation
     protected Animator mAnimator;
-    
-    //Chill variables
-    public float chillTime = 5.0f;
-    public bool chillin = false;
-    
-    
+
     public virtual void OnEnable()
     {
         currentState = null;
         Debug.Log("Why am I here?");
+        guaranteeAnimatorAndNavMesh();
+    }
+
+    public virtual void guaranteeAnimatorAndNavMesh()
+    {
         if (mAnimator == null)
             mAnimator = GetComponent<Animator>();
         if (navAgent == null)
@@ -45,12 +45,11 @@ public abstract class NPC_BaseClass : MonoBehaviour
         //in the execution of the state the state is changed
         currentState = currentState.DoState();
         currentStateName = currentState.ToString();
-        Debug.Log("StateName in BaseClass: " + currentStateName);
 
-        animate();
+        animateWalking();
     }
 
-    public virtual void animate()
+    public virtual void animateWalking()
     // Override this method for different agents with different walking animations
     {
         //Walk animation if the agent is moving

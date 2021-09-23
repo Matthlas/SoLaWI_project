@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(WanderState_Sheep))]
-[RequireComponent(typeof(AvoidState_Sheep))]
-[RequireComponent(typeof(FollowState_Sheep))]
+[RequireComponent(typeof(IdleBasicState))]
 
 public class NPC_Citizen1 : NPC_BaseClass
 {
     
-    [HideInInspector] public WanderState_Sheep wanderState;
-    [HideInInspector] public FollowState_Sheep followState;
-    [HideInInspector] public AvoidState_Sheep avoidState;
-    
+    [HideInInspector] public IdleBasicState idleState;
+    public PerformTaskState performTaskState;
+
 
     public override void OnEnable()
     {
-        wanderState = this.GetComponent<WanderState_Sheep>();
-        followState = this.GetComponent<FollowState_Sheep>();
-        avoidState = this.GetComponent<AvoidState_Sheep>();
-        currentState = wanderState;
-        if (mAnimator == null)
-            mAnimator = GetComponent<Animator>();
-        if (navAgent == null)
-            navAgent = GetComponent<NavMeshAgent>();
+        idleState = this.GetComponent<IdleBasicState>();
+        performTaskState = this.GetComponent<PerformTaskState>();
+        
+        currentState = performTaskState;
+        
+        guaranteeAnimatorAndNavMesh();
     }
 
-    public override void animate()
+    public override void animateWalking()
     {
         mAnimator.SetBool("run", IsNavMeshMoving);
+    }
+
+    public void animateWorking()
+    {
+        mAnimator.SetTrigger("attack_1");
     }
 }
