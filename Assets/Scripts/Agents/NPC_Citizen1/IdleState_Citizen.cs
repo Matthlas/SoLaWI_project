@@ -8,6 +8,7 @@ public class IdleState_Citizen : IdleBasicState
 {
     public PerformTaskState performTaskState;
     private NPC_Task_Controller _taskController;
+    private MeetNPCState meetState;
 
     protected override void OnEnable()
     {
@@ -16,6 +17,7 @@ public class IdleState_Citizen : IdleBasicState
         avoidState = this.GetComponent<AvoidState>();
         performTaskState = this.GetComponent<PerformTaskState>();
         _taskController = this.GetComponent<NPC_Task_Controller>();
+        meetState = this.GetComponent<MeetNPCState>();
     }
     
     public override void ExecuteStateAction()
@@ -27,10 +29,16 @@ public class IdleState_Citizen : IdleBasicState
     {
         if (avoidState.CloseToAvoiding())
             return avoidState;
-        else if (!_taskController.activeTask.done )
+        if (meetState != null)
+        {
+            if (meetState.currentPartner != null)
+            {
+                return meetState;
+            }
+        } 
+        if (!_taskController.activeTask.done)
             return performTaskState;
-        else
-            return this;
+        
+        return idleState;
     }
-
 }

@@ -18,16 +18,15 @@ public class NPCTask : MonoBehaviour
 
     public void StartTask()
     {
-        Debug.Log("Start Task");
         Invoke("TaskDone", workingTime);
         active = true;
     }
 
     public void TaskDone()
     {
-        Debug.Log("Task Done");
         active = false;
         done = true;
+        CancelInvoke("TaskDone");
     }
 
 }
