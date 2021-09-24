@@ -11,7 +11,7 @@ public class NPC_Task_Controller : MonoBehaviour
     private int TaskCounter = 0;
 
     private bool restingAfterDone = false;
-    private float restingTimeBetweenTasks = 5f;
+    public float restingTimeBetweenTasks = 5f;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -21,16 +21,16 @@ public class NPC_Task_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activeTask.done & !restingAfterDone)
-            Debug.Log("SettingNextTask in 2sec");
+        if (activeTask.done && !restingAfterDone)
+        {
             restingAfterDone = true;
             Invoke("SetNextTask", restingTimeBetweenTasks);
-            
+        }
+
     }
 
     private void SetNextTask()
     {
-        Debug.Log("Now I'm here");
         TaskCounter += 1;
         activeTask = tasks[TaskCounter % tasks.Count];
         Debug.Log(activeTask);
