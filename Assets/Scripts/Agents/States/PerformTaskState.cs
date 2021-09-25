@@ -11,6 +11,7 @@ public class PerformTaskState : NPCState
     [HideInInspector] private IdleBasicState idleState;
     [HideInInspector] private AvoidState avoidState;
     [HideInInspector] private NPC_Task_Controller _taskController;
+    private MeetNPCState meetState;
     private NPCTask myTask;
     
     //Working variables
@@ -22,6 +23,7 @@ public class PerformTaskState : NPCState
         idleState = this.GetComponent<IdleBasicState>();
         avoidState = this.GetComponent<AvoidState>();
         _taskController = this.GetComponent<NPC_Task_Controller>();
+        meetState = this.GetComponent<MeetNPCState>();
     }
     
 
@@ -39,7 +41,7 @@ public class PerformTaskState : NPCState
         }
         else
         {
-            if (!myTask.active & !myTask.done)
+            if (!myTask.active && !myTask.done)
             {
                 myTask.StartTask();
                 npc.animateWorking();
@@ -55,6 +57,9 @@ public class PerformTaskState : NPCState
     {
         if (avoidState.CloseToAvoiding())
             return avoidState;
+        if (meetState != null)
+            if (meetState.currentPartner != null)
+                return meetState;
         if (myTask.done)
         {
             return idleState;
