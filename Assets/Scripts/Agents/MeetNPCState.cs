@@ -21,6 +21,8 @@ public class MeetNPCState : NPCState
     public MeetNPCState currentPartner = null;
     public bool inMeeting = false;
     private bool recentlyMetSomeone = false;
+    
+    private float rotation_speed = 5f;
 
     private void OnEnable()
     {
@@ -45,14 +47,15 @@ public class MeetNPCState : NPCState
             else
             {
                 if (!inMeeting)
-                {
                     StartMeeting();
-                }
+                else
+                    npc.animateTalking();
+                RotateTowards(currentPartner.transform);
             }
+            
         }
-
-        if (inMeeting)
-            npc.animateTalking();
+        
+            
     }
 
     public override NPCState TransitionToState()
@@ -87,7 +90,6 @@ public class MeetNPCState : NPCState
         
         if (other_meetable_npc != null)
         {
-            Debug.Log("Other is an meetable npc");
             if (other_meetable_npc.CanMeet())
                 other_meetable_npcs_list.Add(other_meetable_npc);
 
@@ -108,12 +110,10 @@ public class MeetNPCState : NPCState
 
     private void StartMeeting()
     {
-        Debug.Log("Start Meeting");
         inMeeting = true;
         npc.navAgent.isStopped = true;
         npc.navAgent.ResetPath();
         npc.navAgent.isStopped = false;
-        FaceTarget(currentPartner.transform.position);
         Invoke("StopMeeting", meetingTime);
     }
 
@@ -131,14 +131,17 @@ public class MeetNPCState : NPCState
         recentlyMetSomeone = false;
     }
     
-    private void FaceTarget(Vector3 destination)
+    private void RotateTowards(Transform target)
     {
-        Vector3 lookPos = destination - transform.position;
-        lookPos.y = 0;
-        Quaternion rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);  
+        Vector3 direction = (target.position - transform.position).normalized;
+        if (direction != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));    // flattens the vector3
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotation_speed);
+        }
+
     }
-    
-    
+
+
 
 }
