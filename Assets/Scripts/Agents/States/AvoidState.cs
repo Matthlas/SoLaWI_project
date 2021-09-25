@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,13 +11,16 @@ public class AvoidState : NPCState
     
     //Avoiding variables
     public GameObject Avoiding;
+    // public List<GameObject> objectsToAvoid;
     public float AvoidingDistance = 3.0f;
+    private float[] distances;
     
     private void OnEnable()
     {
         npc = this.GetComponent<NPC_BaseClass>();
         idleState = this.GetComponent<IdleBasicState>();
         avoidState = this;
+        // distances = new float[objectsToAvoid.Count];
     }
     
 
@@ -42,6 +46,13 @@ public class AvoidState : NPCState
     
     public bool CloseToAvoiding()
     {
+        // float[] distances = new float[objectsToAvoid.Count];
+        // foreach (var object in objectsToAvoid)
+        // {
+        //     
+        // }
+        if (Avoiding == null)
+            return false;
         return Vector3.Distance(transform.position, Avoiding.transform.position) < AvoidingDistance;
     }
 }
