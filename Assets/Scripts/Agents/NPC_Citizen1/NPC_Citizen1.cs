@@ -43,6 +43,12 @@ public class NPC_Citizen1 : NPC_BaseClass
 
     public void animateTalking()
     {
-        mAnimator.SetTrigger("tr_drop");
+        // Create a Random object  
+        Random rand = new Random();  
+        // Generate a random number between 0 and 30
+        int choosing_int = rand.Next(42);
+        // only play animation if number is 0. Makes for a less chaotic, more "organic" talking animation
+        if (choosing_int   > 40)
+            mAnimator.SetTrigger("tr_drop");
     }
 }
