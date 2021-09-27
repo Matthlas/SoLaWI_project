@@ -11,10 +11,10 @@ public class AvoidState : NPCState
     [HideInInspector] private IdleBasicState idleState;
 
     //Avoiding variables
-    public List<GameObject> objectsToAvoid;
+    public List<GameObject> objectsToAvoid = new List<GameObject>();
     public float AvoidingDistance = 3.0f;
     private GameObject Avoiding;
-    
+
     private void OnEnable()
     {
         // Instantiate all variables
@@ -51,23 +51,28 @@ public class AvoidState : NPCState
     
     public bool CloseToAvoiding()
     {
-        //Calculate distances to all objects to avoid
-        //Make the closest object the one to Avoid
-        float closest_dist = AvoidingDistance + 1;
-        Avoiding = null;
-        foreach (var obj in objectsToAvoid)
+        if (objectsToAvoid.Count == 0)
         {
-            float distToObj = Vector3.Distance(transform.position, obj.transform.position);
-            if (distToObj < closest_dist)
+            //Calculate distances to all objects to avoid
+            //Make the closest object the one to Avoid
+            float closest_dist = AvoidingDistance + 1;
+            Avoiding = null;
+            foreach (var obj in objectsToAvoid)
             {
-                closest_dist = distToObj;
-                Avoiding = obj;
+                float distToObj = Vector3.Distance(transform.position, obj.transform.position);
+                if (distToObj < closest_dist)
+                {
+                    closest_dist = distToObj;
+                    Avoiding = obj;
+                }
             }
-                
+
+            //Return true if there is an object to avoid, false otherwise
+            if (Avoiding == null)
+                return false;
+            return closest_dist < AvoidingDistance;
         }
-        //Return true if there is an object to avoid, false otherwise
-        if (Avoiding == null)
+        else
             return false;
-        return closest_dist < AvoidingDistance;
     }
 }
