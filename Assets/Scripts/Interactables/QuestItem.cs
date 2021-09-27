@@ -21,7 +21,7 @@ public class QuestItem : InteractableItemBaseClass
         spawnItem.enabled = false;
         //play cue
         //set quest to completed /alternative: directly change mode of npc
-        NPC.Qcompleted = true;
+        Dialoguegiver.Qcompleted = true;
 
 
     }
