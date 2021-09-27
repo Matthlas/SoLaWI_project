@@ -125,7 +125,25 @@ public class PlayerControllerAdapted : MonoBehaviour
             for (int i = 0; i < InteractItemsList.Count; i++)
             {
                 // Interact animation 
-                InteractItemsList[i].OnInteractAnimation(_animator);
+                //InteractItemsList[i].OnInteractAnimation(_animator);
+                switch (mode)
+                {
+                    case Mode.Säen:
+                        _animator.SetTrigger("plant");
+                        break;
+                    case Mode.Giessen:
+                        _animator.SetTrigger("water");
+                        break;
+                    case Mode.Jäten:
+                        _animator.SetTrigger("weed");
+                        break;
+                    case Mode.Ernten:
+                        _animator.SetTrigger("harvest");
+                        break;
+                    case Mode.Buddeln:
+                        _animator.SetTrigger("weed");
+                        break;
+                }
                 // Interaction function of the object
                 InteractItemsList[i].OnInteract();
             }

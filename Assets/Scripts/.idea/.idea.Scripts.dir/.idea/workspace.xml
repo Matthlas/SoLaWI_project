@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ee62cc6-79da-4518-ab24-20021a15fbd6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../3rdParty/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Animations/2Hand-Sword/RPG-Character@2Hand-Sword-Attack5.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../3rdParty/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Animations/2Hand-Sword/RPG-Character@2Hand-Sword-Attack5.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../3rdParty/Mixamo/Magic Pack/Animations/Standing_1H_Magic_Attack_02.anim" beforeDir="false" afterPath="$PROJECT_DIR$/../../../3rdParty/Mixamo/Magic Pack/Animations/Standing_1H_Magic_Attack_02.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Code.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Code.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Scripts/PlayerControllerAdapted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Scripts/PlayerControllerAdapted.cs" afterDir="false" />
+    <list default="true" id="ea1fbb22-5a1b-48b6-8151-6691866a32a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../3rdParty/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Animations/2Hand-Sword/RPG-Character@2Hand-Sword-Attack5.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../3rdParty/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Animations/2Hand-Sword/RPG-Character@2Hand-Sword-Attack5.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3rdParty/Mixamo/Magic Pack/Animations/Standing_1H_Magic_Attack_02.anim" beforeDir="false" afterPath="$PROJECT_DIR$/../3rdParty/Mixamo/Magic Pack/Animations/Standing_1H_Magic_Attack_02.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExplosiveLLC/Demo Elements/Code/.idea/.idea.Code.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ExplosiveLLC/Demo Elements/Code/.idea/.idea.Code.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IMG/ssc1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../IMG/ssc1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerControllerAdapted.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerControllerAdapted.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +15,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../Scripts/Agents/States/FollowState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Scripts/PlayerControllerAdapted.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectId" id="1ydRK190ayJtXsdnbZqK4UBzhMc" />
+  <component name="ProjectId" id="1yiKlDn9bg4hUmrIjm7kkC014Ec" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,12 +32,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9ee62cc6-79da-4518-ab24-20021a15fbd6" name="Changes" comment="" />
-      <created>1632579436222</created>
+      <changelist id="ea1fbb22-5a1b-48b6-8151-6691866a32a9" name="Changes" comment="" />
+      <created>1632729177478</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1632579436222</updated>
-      <workItem from="1632579445738" duration="2331000" />
+      <updated>1632729177478</updated>
+      <workItem from="1632729190539" duration="4874000" />
     </task>
     <servers />
   </component>
