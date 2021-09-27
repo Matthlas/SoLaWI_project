@@ -1,25 +1,22 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(AvoidState))]
 [RequireComponent(typeof(WanderState))]
 
 public class FollowState : NPCState
 {
-    [HideInInspector] public NPC_BaseClass npc;
-    [HideInInspector] public WanderState wanderState;
-    [HideInInspector] public FollowState followState;
-    [HideInInspector] public AvoidState avoidState;
+    [HideInInspector] private NPC_BaseClass npc;
+    [HideInInspector] private WanderState wanderState;
+    [HideInInspector] private AvoidState avoidState;
     
     // Following variables
-    public GameObject Following;
-    public float FollowDistance = 5.0f;
+    [SerializeField] private GameObject Following;
+    [SerializeField] private float FollowDistance = 5.0f;
     
     private void OnEnable()
     {
         npc = this.GetComponent<NPC_BaseClass>();
         wanderState = this.GetComponent<WanderState>();
-        followState = this;
         avoidState = this.GetComponent<AvoidState>();
     }
 
@@ -28,7 +25,7 @@ public class FollowState : NPCState
         if (!wanderState.chillin) //Slighty delay the following for more organic aesthetics
         {
             //Calculate direction vector to following and set new destination
-            Vector3 dirToFollowing = npc.transform.position - followState.Following.transform.position;
+            Vector3 dirToFollowing = npc.transform.position - Following.transform.position;
             Vector3 newPos = npc.transform.position - dirToFollowing;
 
             if (npc.navAgent.destination != newPos)
@@ -38,17 +35,24 @@ public class FollowState : NPCState
 
     public override NPCState TransitionToState()
     {
-        if (avoidState.CloseToAvoiding())
-            return avoidState;
-        else if (!followState.FarFromFollowing())
-            //Possibly stop agent
+        if (avoidState != null)
+        {
+            if (avoidState.CloseToAvoiding())
+                return avoidState;
+        }
+        if (!FarFromFollowing())
             return wanderState;
         else
-            return followState;
+            return this;
     }
     
+    
+    // Checks whether the npc is far from the object to follow
     public bool FarFromFollowing()
     {
-        return Vector3.Distance(transform.position, Following.transform.position) > FollowDistance;
+        if (Following != null)
+            return Vector3.Distance(transform.position, Following.transform.position) > FollowDistance;
+        else
+            return false;
     }
 }

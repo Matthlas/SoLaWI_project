@@ -30,15 +30,11 @@ public class WanderState : IdleBasicState
 
     public override void ExecuteStateAction()
     {
-        //if close to current target chill and then choose next location
-        if (npc.navAgent.remainingDistance < followState.FollowDistance/2)
+        if (!chillin)
         {
-            if (!chillin)
-            {
-                SetNewExplorationPoint();
-                //Randomized chill time for more dynamic behaviour
-                ChillABit();
-            }
+            SetNewExplorationPoint();
+            //Randomized chill time for more dynamic behaviour
+            ChillABit();
         }
     }
 
