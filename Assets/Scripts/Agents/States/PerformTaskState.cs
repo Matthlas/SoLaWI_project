@@ -11,6 +11,7 @@ public class PerformTaskState : NPCState
     [HideInInspector] private IdleBasicState idleState;
     [HideInInspector] private AvoidState avoidState;
     [HideInInspector] private NPC_Task_Controller _taskController;
+    [HideInInspector] private MeetPlayerState meetPlayerState;
     private MeetNPCState meetState;
     private NPCTask myTask;
     
@@ -24,6 +25,7 @@ public class PerformTaskState : NPCState
         avoidState = this.GetComponent<AvoidState>();
         _taskController = this.GetComponent<NPC_Task_Controller>();
         meetState = this.GetComponent<MeetNPCState>();
+        meetPlayerState = this.GetComponent<MeetPlayerState>();
     }
     
 
@@ -57,6 +59,8 @@ public class PerformTaskState : NPCState
     {
         if (avoidState.CloseToAvoiding())
             return avoidState;
+        if (meetPlayerState.meetingPlayer)
+            return meetPlayerState;
         if (meetState != null)
             if (meetState.currentPartner != null)
                 return meetState;
