@@ -876,7 +876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc: {fileID: 0}
   objectsToAvoid:
-  - {fileID: 0}
+  - {fileID: 8480060622085837643, guid: f748d0d202b23a7498473192727b2f0d, type: 3}
   AvoidingDistance: 3
 --- !u!114 &9157173756814289166
 MonoBehaviour:
