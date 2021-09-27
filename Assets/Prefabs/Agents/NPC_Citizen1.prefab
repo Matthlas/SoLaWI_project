@@ -1125,9 +1125,10 @@ GameObject:
   - component: {fileID: 6592531911186376201}
   - component: {fileID: 6592531911186376202}
   - component: {fileID: 6592531911186376203}
+  - component: {fileID: 2883717756894730740}
   m_Layer: 0
   m_Name: NPC_Citizen1
-  m_TagString: Player
+  m_TagString: NPC_CItizen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1192,7 +1193,7 @@ CharacterController:
   m_GameObject: {fileID: 6592531911186376204}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.41
@@ -1248,7 +1249,6 @@ MonoBehaviour:
   navAgent: {fileID: 0}
   nextLocation: {x: 0, y: 0, z: 0}
   idleState: {fileID: 0}
-  performTaskState: {fileID: 0}
 --- !u!114 &6592531911186376247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,7 +1274,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1332,8 +1332,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41762e025a3004a46ac9fe0e34b6252d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 0}
   meetingDistance: 2
   meetingTime: 5
   currentPartner: {fileID: 0}
   inMeeting: 0
+--- !u!114 &2883717756894730740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592531911186376204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8919c9d5479f0d84186682909e48c988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meetingDistance: 1
+  meetingPlayerTime: 10
+  meetingPlayer: 0

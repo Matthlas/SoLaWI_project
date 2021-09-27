@@ -9,6 +9,7 @@ public class IdleState_Citizen : IdleBasicState
     public PerformTaskState performTaskState;
     private NPC_Task_Controller _taskController;
     private MeetNPCState meetState;
+    [HideInInspector] private MeetPlayerState meetPlayerState;
 
     protected override void OnEnable()
     {
@@ -18,6 +19,7 @@ public class IdleState_Citizen : IdleBasicState
         performTaskState = this.GetComponent<PerformTaskState>();
         _taskController = this.GetComponent<NPC_Task_Controller>();
         meetState = this.GetComponent<MeetNPCState>();
+        meetPlayerState = this.GetComponent<MeetPlayerState>();
     }
     
     public override void ExecuteStateAction()
@@ -29,15 +31,22 @@ public class IdleState_Citizen : IdleBasicState
     {
         if (avoidState.CloseToAvoiding())
             return avoidState;
+        if (meetPlayerState.meetingPlayer)
+            return meetPlayerState;
+        
         if (meetState != null)
         {
             if (meetState.currentPartner != null)
             {
                 return meetState;
             }
-        } 
-        if (!_taskController.activeTask.done)
-            return performTaskState;
+        }
+
+        if (_taskController.activeTask != null)
+        {
+            if (!_taskController.activeTask.done)
+                return performTaskState;
+        }
         
         return idleState;
     }

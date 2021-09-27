@@ -11,6 +11,7 @@ public class MeetNPCState : NPCState
     [HideInInspector] private NPC_Citizen1 npc;
     [HideInInspector] private IdleBasicState idleState;
     [HideInInspector] private AvoidState avoidState;
+    [HideInInspector] private MeetPlayerState meetPlayerState;
     
 
     //Meeting variables
@@ -27,6 +28,7 @@ public class MeetNPCState : NPCState
         npc = this.GetComponent<NPC_Citizen1>();
         idleState = this.GetComponent<IdleBasicState>();
         avoidState = this.GetComponent<AvoidState>();
+        meetPlayerState = this.GetComponent<MeetPlayerState>();
         // Slightly delay meeting so NPCs don't start out directly meeting
         Invoke("ReadyToMeetAgain", meetingTime);
     }
@@ -65,19 +67,28 @@ public class MeetNPCState : NPCState
         if (avoidState != null)
         {
             if (avoidState.CloseToAvoiding())
+                npc.stopAllTalking();
                 return avoidState;
         }
+
+        if (meetPlayerState.meetingPlayer)
+            return meetPlayerState;
+        
         if (currentPartner != null && !recentlyMetSomeone)
             return this;
         else
+        {
+            npc.stopAllTalking();
             return idleState;
+        }
+            
     }
     
     
     //if colliding check it the other is a meetable npc
     private void OnTriggerEnter(Collider other)
     {
-        TryMeeting(other);
+        TryMeetingNPC(other);
     }
 
     //On trigger exit remove the other as partner. THis shouldn't happen but better safe than sorry
@@ -92,7 +103,7 @@ public class MeetNPCState : NPCState
     }
 
     // If the other can meet, and this can meet set other as current partner
-    private void TryMeeting(Collider other)
+    public void TryMeetingNPC(Collider other)
     {
         MeetNPCState other_meetable_npc = other.GetComponent<MeetNPCState>();
         
@@ -124,6 +135,7 @@ public class MeetNPCState : NPCState
         npc.navAgent.isStopped = true;
         npc.navAgent.ResetPath();
         npc.navAgent.isStopped = false;
+        npc.animateWaving();
         Invoke("StopMeeting", meetingTime);
     }
 
