@@ -4,11 +4,25 @@
 
 
 
+make agents react to player (matze)                         5
+Design city (marlena)                                       5
+Make city accessible by player                              5
+Debug UI dialogue (Eddie)                                   5   
+Develop Questsystem (Eddie)                                 5           
+Add more animation options: 
+waving, walking, sitting (marlena)                          5
+make UI match                                               3
+Add weather                                                 1
+Add minimap (tut lowpoly)                                   2
+Spielstand speicher und fortsetzten (Annika)                5
+startscreen(Annika)                                         5
+replace item images with 3D Models                          2
+gitarre in Hand nehmen                                      2
 
+add hand item to inventory (eddie)                          3
+gießanimation                                               4   done
 
-gießanimation                                               4
-gitarre in Hand nehmen                                      5
-Feuerknistern                                               5
+Feuerknistern                                               1
 
 
 
