@@ -36,7 +36,7 @@ public class QuestGiver : MonoBehaviour
         questWindow.SetActive(false);
         quest.isActive = true;
         //needs to be changed bacause we don't want the quest to be given to player
-        player.quest = quest;
+       // player.quest = quest;
 
     }
 }

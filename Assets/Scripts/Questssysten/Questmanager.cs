@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.VirtualTexturing;
 
-//manaages all quests and displays them
+/*manaages all quests and displays them
 public class Questmanager : MonoBehaviour
 {
     public Quest[] quests;
@@ -18,3 +18,4 @@ public class Questmanager : MonoBehaviour
 
     
 }
+*/
