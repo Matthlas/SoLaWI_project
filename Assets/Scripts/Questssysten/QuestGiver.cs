@@ -6,13 +6,10 @@ using UnityEngine.UI;
 public class QuestGiver : MonoBehaviour
 {
     public Quest quest;
-    //public Questmanager questmanager;
-
-
     public GameObject questWindow;
     public Text titleText;
     public Text descriptionText;
-    
+    public ChallengeManager questmanager;
     //change
     public Text experienceText;
     public Text goldText;
@@ -20,6 +17,7 @@ public class QuestGiver : MonoBehaviour
     //add this function to UI button
     public void OpenQuestWindow()
     {
+        FindObjectOfType<DialogueManager>().EndDialogue();
         //accesses the variables from the quest and displays them in the UI
         questWindow.SetActive(true);
         titleText.text = quest.title;
@@ -33,10 +31,15 @@ public class QuestGiver : MonoBehaviour
     //add this function to UI button
     public void AcceptQuest()
     {
+        Debug.Log("accepting");
         questWindow.SetActive(false);
         quest.isActive = true;
         //needs to be changed bacause we don't want the quest to be given to player
-       // player.quest = quest;
+        questmanager.quest = quest;
+       //questmanager.quest = quest; add to list
+       
+       //spawn the gatheritems
+       //quest.goal.q
 
     }
 }

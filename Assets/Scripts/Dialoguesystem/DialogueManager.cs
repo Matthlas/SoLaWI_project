@@ -10,6 +10,8 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
+    public GameObject DialogueBox;
+    
     void Start()
     {
         sentences = new Queue<string>();
@@ -17,6 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        DialogueBox.SetActive(true);
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -55,6 +58,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        DialogueBox.SetActive(false);
         animator.SetBool("IsOpen", false);
         return;
     }

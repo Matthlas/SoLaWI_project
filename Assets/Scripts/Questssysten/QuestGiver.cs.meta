@@ -3,7 +3,13 @@ guid: c59f1264bc4974570bd244608c6552f7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - quest: {instanceID: 0}
+  - questWindow: {fileID: 4812382089440469796, guid: 6d806c1c0038e40c3858a7da33464afe, type: 3}
+  - titleText: {instanceID: 0}
+  - descriptionText: {instanceID: 0}
+  - experienceText: {instanceID: 0}
+  - goldText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
