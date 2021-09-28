@@ -4,18 +4,18 @@
 
 
 
-make agents react to player (matze)                         5
+make agents react to player (matze)                         5   done
 Design city (marlena)                                       5
-Make city accessible by player                              5
+Make city accessible by player                              5   done
 Debug UI dialogue (Eddie)                                   5   
 Develop Questsystem (Eddie)                                 5           
 Add more animation options: 
-waving, walking, sitting (marlena)                          5
+waving, walking, sitting (marlena)                          5   done
 make UI match                                               3
 Add weather                                                 1
-Add minimap (tut lowpoly)                                   2
+Add minimap (tut lowpoly)                                   2   done
 Spielstand speicher und fortsetzten (Annika)                5
-startscreen(Annika)                                         5
+startscreen(Annika)                                         5   done?
 replace item images with 3D Models                          2
 gitarre in Hand nehmen                                      2
 

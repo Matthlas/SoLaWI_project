@@ -860,8 +860,6 @@ MonoBehaviour:
   navAgent: {fileID: 0}
   nextLocation: {x: 0, y: 0, z: 0}
   wanderState: {fileID: 0}
-  followState: {fileID: 0}
-  avoidState: {fileID: 0}
 --- !u!114 &9157173756814289167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,10 +908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e87ba967baad148a90249508de18f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 0}
-  wanderState: {fileID: 0}
-  followState: {fileID: 0}
-  avoidState: {fileID: 0}
   Following: {fileID: 0}
   FollowDistance: 5
 --- !u!1 &9157173756983306302
