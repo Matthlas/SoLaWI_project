@@ -11,6 +11,9 @@ public class ChallengeManager : MonoBehaviour
 {
     private static int challengeNr = 1;
     private static GameObject thisGameObject;
+    public Quest quest;
+        
+    
     void Start()
     {
         newChallenge();
@@ -81,6 +84,15 @@ public class ChallengeManager : MonoBehaviour
             ScoreboardHandler.displayScore();
         }
         
+        //chacks whether questgoals are reached
+        if(quest.isActive)
+        {
+            if (quest.goal.IsReached())
+            {
+                quest.Complete();
+            }
+            
+        }
     }
 
     public static void challengeAccomplished()

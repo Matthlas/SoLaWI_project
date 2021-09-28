@@ -15,7 +15,8 @@ public class PlayerControllerAdapted : MonoBehaviour
         Giessen,
         Jäten,
         Ernten,
-        Buddeln
+        Buddeln,
+        Hand
 
     }
     #region Private Members
@@ -142,6 +143,8 @@ public class PlayerControllerAdapted : MonoBehaviour
                         break;
                     case Mode.Buddeln:
                         _animator.SetTrigger("weed");
+                        break;
+                    case Mode.Hand:
                         break;
                 }
                 // Interaction function of the object
@@ -290,6 +293,14 @@ public class PlayerControllerAdapted : MonoBehaviour
             Item.transform.localPosition = new Vector3(-9e-05f, 0.00048f, 0.00212f);
             Item.transform.localEulerAngles = new Vector3(10.164f,82.793f, 133.341f);
             Item.transform.localScale = new Vector3(0.004096563f, 0.004096563f, 0.004096563f);
+        }
+        //handmode has no Item/image till now
+        else if (key.Equals(KeyCode.Alpha6))
+        {
+            mode = Mode.Hand;
+            Hand.GetComponent<SpriteRenderer>().sprite = null;
+            
+            
         }
     }
 

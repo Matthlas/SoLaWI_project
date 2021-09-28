@@ -9,27 +9,31 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-
+//this questitem is specifically working for the Shepperd quest
+//however could be made more general by using inheritance or making the questgiver object public
 public class QuestItem : InteractableItemBaseClass
 {
+    public int ItemID;
 
     public override void OnInteract()
     {
-        //destroy game object
-        //Destroy(gameObject);
-        MeshRenderer spawnItem = gameObject.GetComponent<MeshRenderer>();
-        spawnItem.enabled = false;
-        //play cue
-        //set quest to completed /alternative: directly change mode of npc
-        Dialoguegiver.Qcompleted = true;
 
-
+        //check if player in Pickup mode
+        PlayerControllerAdapted.Mode mode = GameObject.Find("Player").GetComponent<PlayerControllerAdapted>().getMode();
+        if (mode == PlayerControllerAdapted.Mode.Hand)
+        {
+            //check if this ques 
+            int GatherID = GameObject.Find("Shepperd").GetComponent<QuestGiver>().quest.goal.GatherId;
+            if (ItemID == GatherID)
+            {
+                GameObject.Find("Shepperd").GetComponent<QuestGiver>().quest.goal.ItemCollected();
+                if (gameObject != null)
+                {
+                    //Destroy(gameObject);
+                    MeshRenderer spawnItem = gameObject.GetComponent<MeshRenderer>();
+                    spawnItem.enabled = false;
+                }
+            }
+        }
     }
-
-
-
-
-
-
-
 }

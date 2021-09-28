@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 
 
@@ -16,14 +17,10 @@ public class Dialoguegiver : InteractableItemBaseClass
     public Dialogue dialogue1;
     public Dialogue dialogue2;
     public Dialogue dialogue3;
-
-    [SerializeField]
-    public GameObject QuestItem;
-
-    public Collider n_collider;
     
-  
-    public static bool Qcompleted = false;
+    public GameObject q_trigger;
+    [SerializeField]
+
     //finite state machine for Quest/NPC status
     public enum NPCFSM {
         inactive,
@@ -43,10 +40,10 @@ public class Dialoguegiver : InteractableItemBaseClass
 
     public override void OnInteract()
     {
-       // n_collider = this.gameObject.GetComponent. < CapsuleCollider > ();
+       // the dialoggiver mode is set to completed, when the quest is completed
+        bool Qcompleted = GameObject.Find("Shepperd").GetComponent<QuestGiver>().quest.completed;
         if (Qcompleted == true)
         {
-            
             NPCMode = NPCFSM.completed;
         }
         if (NPCMode == NPCFSM.completed)
@@ -58,10 +55,12 @@ public class Dialoguegiver : InteractableItemBaseClass
         if (NPCMode == NPCFSM.pending)
         {
             triggerDialogue(dialogue2);
-            //insert something like: if pressed continue then change npc mode
-            //spawns quest Item
-            MeshRenderer spawnItem = QuestItem.GetComponent<MeshRenderer>();
-            spawnItem.enabled = true;
+            //spawns a button that opens the questwindow
+            q_trigger.SetActive(true);
+            
+            //spawns quest Items (must get debugged)
+            //MeshRenderer spawnItem = QuestItem.GetComponent<MeshRenderer>();
+            //spawnItem.enabled = true;
 
         }
         if (NPCMode == NPCFSM.inactive)
@@ -73,8 +72,7 @@ public class Dialoguegiver : InteractableItemBaseClass
         
 
     }
-
-    public object CapsuleCollider { get; set; }
+    
 }
 
 

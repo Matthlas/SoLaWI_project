@@ -5,66 +5,31 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 [System.Serializable] 
-public class Quest: MonoBehaviour
+public class Quest
 {
-    private void Start()
-    {
-        Debug.Log("start");
-    }
 
     // variables of Quest
     public bool isActive;
     public string title;
-
     public string description;
     
     //changethis
     public int experienceReward;
     public int goldReward;
+    public bool completed;
 
-    // variables of questwindow
-    public GameObject questWindow;
-    public Text titleText;
-    public Text descriptionText;
-    
-    //change
-    public Text experienceText;
-    public Text goldText;
+   
     
     //make this as part of a quest directly?
-    //public QuestGoal goal;
-
+    public QuestGoal goal;
+    
     public void Complete()
     {
         isActive = false;
-        
+        completed = true;
+        Debug.Log(title + "was completed");
     }
     
-    
-    //add this function to UI button
-    public void OpenQuestWindow()
-    {
-        //accesses the variables from the quest and displays them in the UI
-        questWindow.SetActive(true);
-        titleText.text = title;
-        descriptionText.text = description;
-        
-        //change
-        experienceText.text = experienceReward.ToString();
-        goldText.text = goldReward.ToString();
-    }
-
-    //add this function to UI button
-    public void AcceptQuest()
-    {
-        questWindow.SetActive(false);
-        isActive = true;
-        //ToDo: give Quest to questmanager
-        
-
-    }
 
 }

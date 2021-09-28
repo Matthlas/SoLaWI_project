@@ -10,7 +10,9 @@ public enum EnumItemType
     Bed,
     Plant,
     QuestItem,
-    Guitar
+    Guitar,
+    CollecterItem,
+    
 }
 
 public class InteractableItemBaseClass : MonoBehaviour
