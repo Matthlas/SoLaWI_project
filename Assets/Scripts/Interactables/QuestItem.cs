@@ -9,7 +9,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-//this questitem is specifically working for the Shepperd quest
+//this questitem is specifically working for the Hiker quest
 //however could be made more general by using inheritance or making the questgiver object public
 public class QuestItem : InteractableItemBaseClass
 {
@@ -23,10 +23,10 @@ public class QuestItem : InteractableItemBaseClass
         if (mode == PlayerControllerAdapted.Mode.Hand)
         {
             //check if this ques 
-            int GatherID = GameObject.Find("Shepperd").GetComponent<QuestGiver>().quest.goal.GatherId;
+            int GatherID = GameObject.Find("Hiker").GetComponent<QuestGiver>().quest.goal.GatherId;
             if (ItemID == GatherID)
             {
-                GameObject.Find("Shepperd").GetComponent<QuestGiver>().quest.goal.ItemCollected();
+                GameObject.Find("Hiker").GetComponent<QuestGiver>().quest.goal.ItemCollected();
                 if (gameObject != null)
                 {
                     //Destroy(gameObject);

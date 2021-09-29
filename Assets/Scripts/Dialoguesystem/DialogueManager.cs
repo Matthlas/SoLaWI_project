@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
     public GameObject DialogueBox;
-    
+    public bool inDialogue;
     void Start()
     {
         sentences = new Queue<string>();
@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        //use this bool to communicate with Dialoguegiver to not start another dialogue
+        inDialogue = true;
         DialogueBox.SetActive(true);
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
@@ -58,8 +60,10 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        
         DialogueBox.SetActive(false);
         animator.SetBool("IsOpen", false);
+        inDialogue = false;
         return;
     }
 }

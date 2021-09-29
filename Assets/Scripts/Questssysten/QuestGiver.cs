@@ -31,7 +31,6 @@ public class QuestGiver : MonoBehaviour
     //add this function to UI button
     public void AcceptQuest()
     {
-        Debug.Log("accepting");
         questWindow.SetActive(false);
         quest.isActive = true;
         //needs to be changed bacause we don't want the quest to be given to player
