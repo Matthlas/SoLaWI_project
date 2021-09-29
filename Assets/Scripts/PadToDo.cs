@@ -20,7 +20,7 @@ Spielstand speicher und fortsetzten (Annika)                5
 startscreen(Annika)                                         5   done?
 replace item images with 3D Models                          2
 gitarre in Hand nehmen                                      2
-pickup animation (matze)                                    3
+pickup animation (matze)                                    3   done
 urban gardening (matze)                                     2
 Add NPCs city                                               3
 Debug beds in NPC city (setInActive)                        5
