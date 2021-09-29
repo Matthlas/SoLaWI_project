@@ -59,7 +59,7 @@ public class PlayerControllerAdapted : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
-        mode = Mode.Giessen;
+        setMode(KeyCode.Alpha6);
     }
 
 
@@ -145,6 +145,7 @@ public class PlayerControllerAdapted : MonoBehaviour
                         _animator.SetTrigger("weed");
                         break;
                     case Mode.Hand:
+                        _animator.SetTrigger("tr_pickup");
                         break;
                 }
                 // Interaction function of the object
