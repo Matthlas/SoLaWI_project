@@ -10,7 +10,8 @@
 ## Second version updates:
 
 
-Link to a Let's Play video showing off the added features of the game: https://youtu.be/8cEOzEIHc8s
+Link to a Let's Play video showing off the added features of the game: https://youtu.be/8cEOzEIHc8s  
+
 Link to builds of the game for windows: https://1drv.ms/u/s!AiYro-6-3hvN-1KGqy8_rHuvA4gE?e=xghhbO
 
 Since this is an update to a project we submitted for the "Introduction to Unity" course we wrote an update report to differentiate all the features we added for the advanced experiment design course. Additionally to those major additions we also fixed bugs in the old version and made some more minor adjustments:
@@ -77,6 +78,6 @@ Link to builds of the game for windows, mac and linux: https://1drv.ms/u/s!AiYro
  - Low Poly Game Kit: Inspiration for parts of the Game Logic, Player character and animation, terrain and some tree prefabs
  
  - Low Poly Nature - Free Vegetation
- - Classic Acousic Guitar
+ - Classic Acoustic Guitar
  - Low Poly Farm Lite
  - Root Vegetables
