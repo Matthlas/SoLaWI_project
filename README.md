@@ -7,7 +7,7 @@
 #### The first version was created by Lukas Rehberg, Emma Seeger and Matthias Richter as a Project for the Introduction to Unity course 2021 at UOS
 #### The second version was created by Emma Seeger, Matthias Richter, Marlena Napp and Annika Theisen as a Project for the Advanced Experiment Design in Unity course 2021 at UOS
 
-## Second version updates:
+## Second version updates - Group 21:
 
 
 Link to a Let's Play video showing off the added features of the game: https://youtu.be/8cEOzEIHc8s  
