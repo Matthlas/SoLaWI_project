@@ -12,7 +12,7 @@ Develop Questsystem (Eddie)                                 5   done
 make example Quest (Eddie)                                      done
 quest anpassen                                              4   done
 make beach (marlenski)
-fix npc bug (matze)                                         4
+fix npc bug (matze)                                         4   done
 Add more animation options: 
 waving, walking, sitting (marlena)                          5   done
 make UI match                                               3   done
@@ -33,6 +33,7 @@ check submission conditions (marlena)
 record video                                                5
 build game                                                  5
 upload game versions                                        5
+Write GitHub Techincal Report                               5
 
 Feuerknistern                                               1   nope
 animate water(marlena)                                      3   done

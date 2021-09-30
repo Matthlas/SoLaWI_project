@@ -19,7 +19,7 @@ public class NPC_Task_Controller : MonoBehaviour
     private bool nullTasksAssigned = false;
     
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
         task_order = Enumerable.Range(0, tasks.Count).ToArray();
         task_order = shuffleArray(task_order);
