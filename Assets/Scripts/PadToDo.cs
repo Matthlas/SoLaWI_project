@@ -10,23 +10,23 @@ Make city accessible by player                              5   done
 Debug UI dialogue (Eddie)                                   5   halfwegs done
 Develop Questsystem (Eddie)                                 5   done  
 make example Quest (Eddie)                                      done
-quest anpassen                                              4
+quest anpassen                                              4   done
 make beach (marlenski)
 fix npc bug (matze)                                         4
 Add more animation options: 
 waving, walking, sitting (marlena)                          5   done
 make UI match                                               3   done
-Add weather                                                 1
+Add weather                                                 1   nope
 Add minimap (tut lowpoly) (Annika)                          2   done
 Activate/deactivate Minimap (Annika)                        2
 Spielstand speicher und fortsetzten (Annika)                5
 startscreen(Annika)                                         5   done?
-replace item images with 3D Models                          2
-gitarre in Hand nehmen                                      2
+replace item images with 3D Models                          2   nope
+gitarre in Hand nehmen                                      2   nope
 pickup animation (matze)                                    3   done
-urban gardening (matze)                                     2
-Add NPCs city                                               3
-Debug beds in NPC city (setInActive)                        5
+urban gardening (matze)                                     2   done
+Add NPCs city                                               3   done
+Debug beds in NPC city (setInActive)                        5   done
 add hand item to inventory (eddie)                          3   done
 gießanimation                                               4   done
 check submission conditions (marlena)
@@ -34,7 +34,7 @@ record video                                                5
 build game                                                  5
 upload game versions                                        5
 
-Feuerknistern                                               1
+Feuerknistern                                               1   nope
 animate water(marlena)                                      3   done
 world building (matze)                                      3   done
 

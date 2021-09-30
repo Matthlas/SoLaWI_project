@@ -51,7 +51,7 @@ public class AvoidState : NPCState
     
     public bool CloseToAvoiding()
     {
-        if (objectsToAvoid.Count == 0)
+        if (objectsToAvoid.Count != 0)
         {
             //Calculate distances to all objects to avoid
             //Make the closest object the one to Avoid
