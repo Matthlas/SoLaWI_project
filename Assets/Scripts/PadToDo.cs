@@ -29,14 +29,14 @@ Add NPCs city                                               3
 Debug beds in NPC city (setInActive)                        5
 add hand item to inventory (eddie)                          3   done
 gießanimation                                               4   done
-check submission conditions 
+check submission conditions (marlena)
 record video                                                5
 build game                                                  5
 upload game versions                                        5
 
 Feuerknistern                                               1
-animate water(marlena)                                      3
-world building (matze)                                      3
+animate water(marlena)                                      3   done
+world building (matze)                                      3   done
 
 
 
