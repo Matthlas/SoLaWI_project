@@ -14,7 +14,7 @@ Link to a Let's Play video showing off the added features of the game: https://y
 
 Link to builds of the game for windows: https://1drv.ms/u/s!AiYro-6-3hvN-1KGqy8_rHuvA4gE?e=xghhbO
 
-Since this is an update to a project we submitted for the "Introduction to Unity" course we wrote an update report to differentiate and explain all the features we added for the advanced experiment design course. Additionally to those major additions we also fixed bugs in the old version and made some more minor adjustments:
+This is an update to a project we submitted for the "Introduction to Unity" course. It has become rather large by now so we could not show all features in the short lets play video. Therefore, and in order for the evaluators of the course to differentiate what we added for the advanced experiment design course, we wrote a short update report explaining our new features:
 
 ### Technical Update Report:
 #### Autonomous NPCs
@@ -66,6 +66,9 @@ Finally we extended our game world to incorporate all of our added features and 
 
 Additional Assets used for World building:
 - LowPolyBrickHouses
+
+#### Bugs Bugs Bugs
+Additionally to those major additions we also fixed bugs in the old version and made some more minor adjustments
 
 ## First version 
 Link to a Let's Play video showing off the features of the game: https://youtu.be/B4_037opUOE  
