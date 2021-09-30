@@ -30,6 +30,10 @@ We created a system to include autonomous NPCs in our game. Our system implement
 - Meet Player State: The NPC greets the player and stops for an interaction
 For details of the system refer to our scripts in the "Agents" folder.
 
+We used our NPC system to create Flocks of sheep that patrol around the scene and inbetween patrols graze at a local spot. They also avoid the player.
+
+The second big thing we used the system for is to create citizens for our new village and the new city. The Citizens walk around and perform tasks either at their personal farm or at the public places. They meet eachother if they get close and they stop to greet the player.
+
 #### Player & NPC Animations
 We added animations of certain actions for both the Player and the NPCs. Added animations are:
  - Weeding
