@@ -24,12 +24,12 @@ We created a system to include autonomous NPCs in our game. Our system implement
 For details of the system refer to our scripts in the "Agents" folder.
 
 #### Player & NPC Animations
-We added animations of certain actions for voth the Player and the NPCs. Added animations are:
+We added animations of certain actions for both the Player and the NPCs. Added animations are:
  - Weeding
  - Harvesting
  - Watering
  - Digging
- - Seeding
+ - Planting
  - Pick Up
  - Working (NPC only)
  - Greeting (NPC only)
@@ -37,12 +37,12 @@ We added animations of certain actions for voth the Player and the NPCs. Added a
  
 We also added an animated Ocean
 
-Assets used: 
+Additional Assets used for animation: 
 - RPG Character Mecanim Animation Pack FREE
 - LowPolyWater_Pack
 - Mixamo Magic Pack
 - Supercyan Character Pack Free Sample
-- Low Poly Water
+
 
 #### Dialouge & Quest System
 We developted a Dialouge System that enables the Player to talk to an NPC (or other Gameobject)
@@ -52,10 +52,13 @@ We developed a Quest System. Through a Dialouge the Player can receive, accept a
 We added a Startscreen and the possibility to pause and quit the game
 
 #### Minimap
-We added a Minimap to the UI to give the Player a better overviw of their position in the game.
+We added a Minimap to the UI to give the Player a better overview of their position in the game.
 
 #### World building
-Finally we extended our game world to incorporate all of our added features and changes. We added a Village and a City with autonomous NPCs, created a simply collection question, and added some NPCs that talk to the player and give them some information about the game. Everything is build such that it can be scaled up  and new NPCs, Quests and Dialouges can be added easily.
+Finally we extended our game world to incorporate all of our added features and changes. We added a Village and a City with autonomous NPCs, created a simple collection question, and added some NPCs that talk to the player and give them some information about the game. Everything is build such that it can be scaled up  and new NPCs, Quests and Dialouges can be added easily.
+
+Additional Assets used for World building:
+- LowPolyBrickHouses
 
 ## First version 
 Link to a Let's Play video showing off the features of the game: https://youtu.be/B4_037opUOE  
