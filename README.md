@@ -9,6 +9,12 @@
 
 ## Second version updates:
 
+
+Link to a Let's Play video showing off the added features of the game: https://youtu.be/8cEOzEIHc8s
+Link to builds of the game for windows: https://1drv.ms/u/s!AiYro-6-3hvN-1KGqy8_rHuvA4gE?e=xghhbO
+
+Since this is an update to a project we submitted for the "Introduction to Unity" course we wrote an update report to differentiate all the features we added for the advanced experiment design course. Additionally to those major additions we also fixed bugs in the old version and made some more minor adjustments:
+
 ### Technical Update Report:
 #### Autonomous NPCs
 We created a system to include autonomous NPCs in our game. Our system implements a finite state machine. Each NPC in the game has a NPC script that inherits from the abstract NPC Base Class and controlls the initialization of the npc/states, the animations, and keeps track of the current state of the NPC. There exist NPC scripts for Sheep NPCs and Citizens which implement specific behavious and animations. We decided to implement the possible states as components. There exists an abstract NPCState Baseclass that each specific state inherits from. Central to each state is that it implements a state action that is executed if the NPC is in the state and a state transition that defines the conditions for transitioning from the state into other states. This way all the states an NPC has define a transition graph. We tried to build the states as modular as possible such that the game designer can pick a subset of them and give them to a new npc class without having to adapt each state. The states we implemented are:
