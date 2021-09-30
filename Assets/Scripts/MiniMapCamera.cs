@@ -10,6 +10,12 @@ public class MiniMapCamera : MonoBehaviour
 
   public bool RotateWithPlayer = true;
 
+  public KeyCode _key;
+
+  private bool MapActive = true;
+
+  public GameObject MiniMap;
+
   public void Start()
   {
     SetPosition();
@@ -26,6 +32,19 @@ public class MiniMapCamera : MonoBehaviour
       if (RotateWithPlayer && MainCamera)
       {
         SetRotation();
+      }
+      if(Input.GetKeyDown(KeyCode.M))
+      {
+        if(MapActive==true)
+        {
+          MapActive = false;
+          MiniMap.SetActive(MapActive);
+        }
+        else if(MapActive==false)
+        {
+          MapActive = true;
+          MiniMap.SetActive(MapActive);
+        }
       }
     }
   }
