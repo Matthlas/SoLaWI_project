@@ -14,7 +14,7 @@ Link to a Let's Play video showing off the added features of the game: https://y
 
 Link to builds of the game for windows: https://1drv.ms/u/s!AiYro-6-3hvN-1KGqy8_rHuvA4gE?e=xghhbO
 
-Since this is an update to a project we submitted for the "Introduction to Unity" course we wrote an update report to differentiate all the features we added for the advanced experiment design course. Additionally to those major additions we also fixed bugs in the old version and made some more minor adjustments:
+Since this is an update to a project we submitted for the "Introduction to Unity" course we wrote an update report to differentiate and explain all the features we added for the advanced experiment design course. Additionally to those major additions we also fixed bugs in the old version and made some more minor adjustments:
 
 ### Technical Update Report:
 #### Autonomous NPCs
