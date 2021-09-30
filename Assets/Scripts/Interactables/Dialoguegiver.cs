@@ -64,7 +64,13 @@ public class Dialoguegiver : InteractableItemBaseClass
         }
         if (NPCMode == NPCFSM.completed)
         {   
-            q_trigger.SetActive(false);
+            if (q_trigger != null)
+            {
+               
+                q_trigger.SetActive(false);
+            }
+           
+                
             triggerDialogue(dialogue3);
             NPCMode = NPCFSM.afterquest;
 

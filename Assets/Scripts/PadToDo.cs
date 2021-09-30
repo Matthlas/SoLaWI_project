@@ -7,12 +7,15 @@
 make agents react to player (matze)                         5   done
 Design city (marlena)                                       5   done
 Make city accessible by player                              5   done
-Debug UI dialogue (Eddie)                                   5   
+Debug UI dialogue (Eddie)                                   5   halfwegs done
 Develop Questsystem (Eddie)                                 5   done  
-make example Quest (Eddie)    
+make example Quest (Eddie)                                      done
+quest anpassen                                              4
+make beach (marlenski)
+fix npc bug (matze)                                         4
 Add more animation options: 
 waving, walking, sitting (marlena)                          5   done
-make UI match                                               3   
+make UI match                                               3   done
 Add weather                                                 1
 Add minimap (tut lowpoly) (Annika)                          2   done
 Activate/deactivate Minimap (Annika)                        2
@@ -27,9 +30,9 @@ Debug beds in NPC city (setInActive)                        5
 add hand item to inventory (eddie)                          3   done
 gießanimation                                               4   done
 check submission conditions 
-record video
-build game
-upload game versions
+record video                                                5
+build game                                                  5
+upload game versions                                        5
 
 Feuerknistern                                               1
 animate water(marlena)                                      3
