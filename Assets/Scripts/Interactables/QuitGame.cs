@@ -10,6 +10,7 @@ public class QuitGame : MonoBehaviour
 
   private void Update()
   {
+      // if Q is pressed, quit game
       if(Input.GetKeyDown(KeyCode.Q))
       {
         Application.Quit();

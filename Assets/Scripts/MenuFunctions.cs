@@ -8,7 +8,7 @@ public class MenuFunctions : MonoBehaviour
     // Start new game
     public void NewGame()
     {
-      // Go to Scene 2 (New Game)
+      // Go to Scene 1 (New Game)
       SceneManager.LoadScene(1);
     }
 

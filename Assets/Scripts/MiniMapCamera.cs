@@ -18,6 +18,7 @@ public class MiniMapCamera : MonoBehaviour
 
   public void Start()
   {
+      // initialise camera position
     SetPosition();
 
     SetRotation();
@@ -25,6 +26,7 @@ public class MiniMapCamera : MonoBehaviour
 
   void LateUpdate()
   {
+    // if player exists actualise minimap camera position
     if(Player != null)
     {
       SetPosition();
@@ -33,6 +35,8 @@ public class MiniMapCamera : MonoBehaviour
       {
         SetRotation();
       }
+
+      // if M is pressed and minimap is activated, turn off minimap
       if(Input.GetKeyDown(KeyCode.M))
       {
         if(MapActive==true)
@@ -40,6 +44,7 @@ public class MiniMapCamera : MonoBehaviour
           MapActive = false;
           MiniMap.SetActive(MapActive);
         }
+        // if M is pressed and minimap is turned off, turn minimap on
         else if(MapActive==false)
         {
           MapActive = true;
@@ -49,6 +54,7 @@ public class MiniMapCamera : MonoBehaviour
     }
   }
 
+  // follow players position with minimap camera
   private void SetPosition()
   {
     var newPos = Player.position;
